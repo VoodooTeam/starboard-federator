@@ -1,0 +1,1164 @@
+{
+    "apiVersion": "v1",
+    "items": [
+        {
+            "apiVersion": "aquasecurity.github.io/v1alpha1",
+            "kind": "CISKubeBenchReport",
+            "metadata": {
+                "creationTimestamp": "2021-05-02T12:44:38Z",
+                "generation": 1,
+                "labels": {
+                    "starboard.resource.kind": "Node",
+                    "starboard.resource.name": "starboard-control-plane"
+                },
+                "managedFields": [
+                    {
+                        "apiVersion": "aquasecurity.github.io/v1alpha1",
+                        "fieldsType": "FieldsV1",
+                        "fieldsV1": {
+                            "f:metadata": {
+                                "f:labels": {
+                                    ".": {},
+                                    "f:starboard.resource.kind": {},
+                                    "f:starboard.resource.name": {}
+                                },
+                                "f:ownerReferences": {
+                                    ".": {},
+                                    "k:{\"uid\":\"3b87b7ba-4728-4d32-8624-09857aad6190\"}": {
+                                        ".": {},
+                                        "f:apiVersion": {},
+                                        "f:blockOwnerDeletion": {},
+                                        "f:controller": {},
+                                        "f:kind": {},
+                                        "f:name": {},
+                                        "f:uid": {}
+                                    }
+                                }
+                            },
+                            "f:report": {
+                                ".": {},
+                                "f:scanner": {
+                                    ".": {},
+                                    "f:name": {},
+                                    "f:vendor": {},
+                                    "f:version": {}
+                                },
+                                "f:sections": {},
+                                "f:summary": {
+                                    ".": {},
+                                    "f:failCount": {},
+                                    "f:infoCount": {},
+                                    "f:passCount": {},
+                                    "f:warnCount": {}
+                                },
+                                "f:updateTimestamp": {}
+                            }
+                        },
+                        "manager": "starboard-operator",
+                        "operation": "Update",
+                        "time": "2021-05-02T12:44:38Z"
+                    }
+                ],
+                "name": "starboard-control-plane",
+                "ownerReferences": [
+                    {
+                        "apiVersion": "v1",
+                        "blockOwnerDeletion": false,
+                        "controller": true,
+                        "kind": "Node",
+                        "name": "starboard-control-plane",
+                        "uid": "3b87b7ba-4728-4d32-8624-09857aad6190"
+                    }
+                ],
+                "resourceVersion": "1259",
+                "selfLink": "/apis/aquasecurity.github.io/v1alpha1/ciskubebenchreports/starboard-control-plane",
+                "uid": "b20b22f9-4854-4618-9b6a-a16d2e55da54"
+            },
+            "report": {
+                "scanner": {
+                    "name": "kube-bench",
+                    "vendor": "Aqua Security",
+                    "version": "0.5.0"
+                },
+                "sections": [
+                    {
+                        "id": "1",
+                        "node_type": "master",
+                        "tests": [
+                            {
+                                "desc": "Master Node Configuration Files",
+                                "fail": 1,
+                                "info": 0,
+                                "pass": 18,
+                                "results": [
+                                    {
+                                        "remediation": "Run the below command (based on the file location on your system) on the\nmaster node.\nFor example, chmod 644 /etc/kubernetes/manifests/kube-apiserver.yaml\n",
+                                        "scored": true,
+                                        "status": "PASS",
+                                        "test_desc": "Ensure that the API server pod specification file permissions are set to 644 or more restrictive (Automated)",
+                                        "test_number": "1.1.1"
+                                    },
+                                    {
+                                        "remediation": "Run the below command (based on the file location on your system) on the master node.\nFor example,\nchown root:root /etc/kubernetes/manifests/kube-apiserver.yaml\n",
+                                        "scored": true,
+                                        "status": "PASS",
+                                        "test_desc": "Ensure that the API server pod specification file ownership is set to root:root (Automated)",
+                                        "test_number": "1.1.2"
+                                    },
+                                    {
+                                        "remediation": "Run the below command (based on the file location on your system) on the master node.\nFor example,\nchmod 644 /etc/kubernetes/manifests/kube-controller-manager.yaml\n",
+                                        "scored": true,
+                                        "status": "PASS",
+                                        "test_desc": "Ensure that the controller manager pod specification file permissions are set to 644 or more restrictive (Automated)",
+                                        "test_number": "1.1.3"
+                                    },
+                                    {
+                                        "remediation": "Run the below command (based on the file location on your system) on the master node.\nFor example,\nchown root:root /etc/kubernetes/manifests/kube-controller-manager.yaml\n",
+                                        "scored": true,
+                                        "status": "PASS",
+                                        "test_desc": "Ensure that the controller manager pod specification file ownership is set to root:root (Automated)",
+                                        "test_number": "1.1.4"
+                                    },
+                                    {
+                                        "remediation": "Run the below command (based on the file location on your system) on the master node.\nFor example,\nchmod 644 /etc/kubernetes/manifests/kube-scheduler.yaml\n",
+                                        "scored": true,
+                                        "status": "PASS",
+                                        "test_desc": "Ensure that the scheduler pod specification file permissions are set to 644 or more restrictive (Automated)",
+                                        "test_number": "1.1.5"
+                                    },
+                                    {
+                                        "remediation": "Run the below command (based on the file location on your system) on the master node.\nFor example,\nchown root:root /etc/kubernetes/manifests/kube-scheduler.yaml\n",
+                                        "scored": true,
+                                        "status": "PASS",
+                                        "test_desc": "Ensure that the scheduler pod specification file ownership is set to root:root (Automated)",
+                                        "test_number": "1.1.6"
+                                    },
+                                    {
+                                        "remediation": "Run the below command (based on the file location on your system) on the master node.\nFor example,\nchmod 644 /etc/kubernetes/manifests/etcd.yaml\n",
+                                        "scored": true,
+                                        "status": "PASS",
+                                        "test_desc": "Ensure that the etcd pod specification file permissions are set to 644 or more restrictive (Automated)",
+                                        "test_number": "1.1.7"
+                                    },
+                                    {
+                                        "remediation": "Run the below command (based on the file location on your system) on the master node.\nFor example,\nchown root:root /etc/kubernetes/manifests/etcd.yaml\n",
+                                        "scored": true,
+                                        "status": "PASS",
+                                        "test_desc": "Ensure that the etcd pod specification file ownership is set to root:root (Automated)",
+                                        "test_number": "1.1.8"
+                                    },
+                                    {
+                                        "remediation": "Run the below command (based on the file location on your system) on the master node.\nFor example,\nchmod 644 \u003cpath/to/cni/files\u003e\n",
+                                        "scored": false,
+                                        "status": "WARN",
+                                        "test_desc": "Ensure that the Container Network Interface file permissions are set to 644 or more restrictive (Manual)",
+                                        "test_number": "1.1.9"
+                                    },
+                                    {
+                                        "remediation": "Run the below command (based on the file location on your system) on the master node.\nFor example,\nchown root:root \u003cpath/to/cni/files\u003e\n",
+                                        "scored": false,
+                                        "status": "WARN",
+                                        "test_desc": "Ensure that the Container Network Interface file ownership is set to root:root (Manual)",
+                                        "test_number": "1.1.10"
+                                    },
+                                    {
+                                        "remediation": "On the etcd server node, get the etcd data directory, passed as an argument --data-dir,\nfrom the below command:\nps -ef | grep etcd\nRun the below command (based on the etcd data directory found above). For example,\nchmod 700 /var/lib/etcd\n",
+                                        "scored": true,
+                                        "status": "PASS",
+                                        "test_desc": "Ensure that the etcd data directory permissions are set to 700 or more restrictive (Automated)",
+                                        "test_number": "1.1.11"
+                                    },
+                                    {
+                                        "remediation": "On the etcd server node, get the etcd data directory, passed as an argument --data-dir,\nfrom the below command:\nps -ef | grep etcd\nRun the below command (based on the etcd data directory found above).\nFor example, chown etcd:etcd /var/lib/etcd\n",
+                                        "scored": true,
+                                        "status": "FAIL",
+                                        "test_desc": "Ensure that the etcd data directory ownership is set to etcd:etcd (Automated)",
+                                        "test_number": "1.1.12"
+                                    },
+                                    {
+                                        "remediation": "Run the below command (based on the file location on your system) on the master node.\nFor example,\nchmod 644 /etc/kubernetes/admin.conf\n",
+                                        "scored": true,
+                                        "status": "PASS",
+                                        "test_desc": "Ensure that the admin.conf file permissions are set to 644 or more restrictive (Automated)",
+                                        "test_number": "1.1.13"
+                                    },
+                                    {
+                                        "remediation": "Run the below command (based on the file location on your system) on the master node.\nFor example,\nchown root:root /etc/kubernetes/admin.conf\n",
+                                        "scored": true,
+                                        "status": "PASS",
+                                        "test_desc": "Ensure that the admin.conf file ownership is set to root:root (Automated)",
+                                        "test_number": "1.1.14"
+                                    },
+                                    {
+                                        "remediation": "Run the below command (based on the file location on your system) on the master node.\nFor example,\nchmod 644 /etc/kubernetes/scheduler.conf\n",
+                                        "scored": true,
+                                        "status": "PASS",
+                                        "test_desc": "Ensure that the scheduler.conf file permissions are set to 644 or more restrictive (Automated)",
+                                        "test_number": "1.1.15"
+                                    },
+                                    {
+                                        "remediation": "Run the below command (based on the file location on your system) on the master node.\nFor example,\nchown root:root /etc/kubernetes/scheduler.conf\n",
+                                        "scored": true,
+                                        "status": "PASS",
+                                        "test_desc": "Ensure that the scheduler.conf file ownership is set to root:root (Automated)",
+                                        "test_number": "1.1.16"
+                                    },
+                                    {
+                                        "remediation": "Run the below command (based on the file location on your system) on the master node.\nFor example,\nchmod 644 /etc/kubernetes/controller-manager.conf\n",
+                                        "scored": true,
+                                        "status": "PASS",
+                                        "test_desc": "Ensure that the controller-manager.conf file permissions are set to 644 or more restrictive (Automated)",
+                                        "test_number": "1.1.17"
+                                    },
+                                    {
+                                        "remediation": "Run the below command (based on the file location on your system) on the master node.\nFor example,\nchown root:root /etc/kubernetes/controller-manager.conf\n",
+                                        "scored": true,
+                                        "status": "PASS",
+                                        "test_desc": "Ensure that the controller-manager.conf file ownership is set to root:root (Automated)",
+                                        "test_number": "1.1.18"
+                                    },
+                                    {
+                                        "remediation": "Run the below command (based on the file location on your system) on the master node.\nFor example,\nchown -R root:root /etc/kubernetes/pki/\n",
+                                        "scored": true,
+                                        "status": "PASS",
+                                        "test_desc": "Ensure that the Kubernetes PKI directory and file ownership is set to root:root (Automated)",
+                                        "test_number": "1.1.19"
+                                    },
+                                    {
+                                        "remediation": "Run the below command (based on the file location on your system) on the master node.\nFor example,\nchmod -R 644 /etc/kubernetes/pki/*.crt\n",
+                                        "scored": false,
+                                        "status": "PASS",
+                                        "test_desc": "Ensure that the Kubernetes PKI certificate file permissions are set to 644 or more restrictive (Manual)",
+                                        "test_number": "1.1.20"
+                                    },
+                                    {
+                                        "remediation": "Run the below command (based on the file location on your system) on the master node.\nFor example,\nchmod -R 600 /etc/kubernetes/pki/*.key\n",
+                                        "scored": false,
+                                        "status": "PASS",
+                                        "test_desc": "Ensure that the Kubernetes PKI key file permissions are set to 600 (Manual)",
+                                        "test_number": "1.1.21"
+                                    }
+                                ],
+                                "section": "1.1",
+                                "warn": 2
+                            },
+                            {
+                                "desc": "API Server",
+                                "fail": 7,
+                                "info": 0,
+                                "pass": 21,
+                                "results": [
+                                    {
+                                        "remediation": "Edit the API server pod specification file /etc/kubernetes/manifests/kube-apiserver.yaml\non the master node and set the below parameter.\n--anonymous-auth=false\n",
+                                        "scored": false,
+                                        "status": "WARN",
+                                        "test_desc": "Ensure that the --anonymous-auth argument is set to false (Manual)",
+                                        "test_number": "1.2.1"
+                                    },
+                                    {
+                                        "remediation": "Follow the documentation and configure alternate mechanisms for authentication. Then,\nedit the API server pod specification file /etc/kubernetes/manifests/kube-apiserver.yaml\non the master node and remove the --basic-auth-file=\u003cfilename\u003e parameter.\n",
+                                        "scored": true,
+                                        "status": "PASS",
+                                        "test_desc": "Ensure that the --basic-auth-file argument is not set (Automated)",
+                                        "test_number": "1.2.2"
+                                    },
+                                    {
+                                        "remediation": "Follow the documentation and configure alternate mechanisms for authentication. Then,\nedit the API server pod specification file /etc/kubernetes/manifests/kube-apiserver.yaml\non the master node and remove the --token-auth-file=\u003cfilename\u003e parameter.\n",
+                                        "scored": true,
+                                        "status": "PASS",
+                                        "test_desc": "Ensure that the --token-auth-file parameter is not set (Automated)",
+                                        "test_number": "1.2.3"
+                                    },
+                                    {
+                                        "remediation": "Edit the API server pod specification file /etc/kubernetes/manifests/kube-apiserver.yaml\non the master node and remove the --kubelet-https parameter.\n",
+                                        "scored": true,
+                                        "status": "PASS",
+                                        "test_desc": "Ensure that the --kubelet-https argument is set to true (Automated)",
+                                        "test_number": "1.2.4"
+                                    },
+                                    {
+                                        "remediation": "Follow the Kubernetes documentation and set up the TLS connection between the\napiserver and kubelets. Then, edit API server pod specification file\n/etc/kubernetes/manifests/kube-apiserver.yaml on the master node and set the\nkubelet client certificate and key parameters as below.\n--kubelet-client-certificate=\u003cpath/to/client-certificate-file\u003e\n--kubelet-client-key=\u003cpath/to/client-key-file\u003e\n",
+                                        "scored": true,
+                                        "status": "PASS",
+                                        "test_desc": "Ensure that the --kubelet-client-certificate and --kubelet-client-key arguments are set as appropriate (Automated)",
+                                        "test_number": "1.2.5"
+                                    },
+                                    {
+                                        "remediation": "Follow the Kubernetes documentation and setup the TLS connection between\nthe apiserver and kubelets. Then, edit the API server pod specification file\n/etc/kubernetes/manifests/kube-apiserver.yaml on the master node and set the\n--kubelet-certificate-authority parameter to the path to the cert file for the certificate authority.\n--kubelet-certificate-authority=\u003cca-string\u003e\n",
+                                        "scored": true,
+                                        "status": "FAIL",
+                                        "test_desc": "Ensure that the --kubelet-certificate-authority argument is set as appropriate (Automated)",
+                                        "test_number": "1.2.6"
+                                    },
+                                    {
+                                        "remediation": "Edit the API server pod specification file /etc/kubernetes/manifests/kube-apiserver.yaml\non the master node and set the --authorization-mode parameter to values other than AlwaysAllow.\nOne such example could be as below.\n--authorization-mode=RBAC\n",
+                                        "scored": true,
+                                        "status": "PASS",
+                                        "test_desc": "Ensure that the --authorization-mode argument is not set to AlwaysAllow (Automated)",
+                                        "test_number": "1.2.7"
+                                    },
+                                    {
+                                        "remediation": "Edit the API server pod specification file /etc/kubernetes/manifests/kube-apiserver.yaml\non the master node and set the --authorization-mode parameter to a value that includes Node.\n--authorization-mode=Node,RBAC\n",
+                                        "scored": true,
+                                        "status": "PASS",
+                                        "test_desc": "Ensure that the --authorization-mode argument includes Node (Automated)",
+                                        "test_number": "1.2.8"
+                                    },
+                                    {
+                                        "remediation": "Edit the API server pod specification file /etc/kubernetes/manifests/kube-apiserver.yaml\non the master node and set the --authorization-mode parameter to a value that includes RBAC,\nfor example:\n--authorization-mode=Node,RBAC\n",
+                                        "scored": true,
+                                        "status": "PASS",
+                                        "test_desc": "Ensure that the --authorization-mode argument includes RBAC (Automated)",
+                                        "test_number": "1.2.9"
+                                    },
+                                    {
+                                        "remediation": "Follow the Kubernetes documentation and set the desired limits in a configuration file.\nThen, edit the API server pod specification file /etc/kubernetes/manifests/kube-apiserver.yaml\nand set the below parameters.\n--enable-admission-plugins=...,EventRateLimit,...\n--admission-control-config-file=\u003cpath/to/configuration/file\u003e\n",
+                                        "scored": false,
+                                        "status": "WARN",
+                                        "test_desc": "Ensure that the admission control plugin EventRateLimit is set (Manual)",
+                                        "test_number": "1.2.10"
+                                    },
+                                    {
+                                        "remediation": "Edit the API server pod specification file /etc/kubernetes/manifests/kube-apiserver.yaml\non the master node and either remove the --enable-admission-plugins parameter, or set it to a\nvalue that does not include AlwaysAdmit.\n",
+                                        "scored": true,
+                                        "status": "PASS",
+                                        "test_desc": "Ensure that the admission control plugin AlwaysAdmit is not set (Automated)",
+                                        "test_number": "1.2.11"
+                                    },
+                                    {
+                                        "remediation": "Edit the API server pod specification file /etc/kubernetes/manifests/kube-apiserver.yaml\non the master node and set the --enable-admission-plugins parameter to include\nAlwaysPullImages.\n--enable-admission-plugins=...,AlwaysPullImages,...\n",
+                                        "scored": false,
+                                        "status": "WARN",
+                                        "test_desc": "Ensure that the admission control plugin AlwaysPullImages is set (Manual)",
+                                        "test_number": "1.2.12"
+                                    },
+                                    {
+                                        "remediation": "Edit the API server pod specification file /etc/kubernetes/manifests/kube-apiserver.yaml\non the master node and set the --enable-admission-plugins parameter to include\nSecurityContextDeny, unless PodSecurityPolicy is already in place.\n--enable-admission-plugins=...,SecurityContextDeny,...\n",
+                                        "scored": false,
+                                        "status": "WARN",
+                                        "test_desc": "Ensure that the admission control plugin SecurityContextDeny is set if PodSecurityPolicy is not used (Manual)",
+                                        "test_number": "1.2.13"
+                                    },
+                                    {
+                                        "remediation": "Follow the documentation and create ServiceAccount objects as per your environment.\nThen, edit the API server pod specification file /etc/kubernetes/manifests/kube-apiserver.yaml\non the master node and ensure that the --disable-admission-plugins parameter is set to a\nvalue that does not include ServiceAccount.\n",
+                                        "scored": true,
+                                        "status": "PASS",
+                                        "test_desc": "Ensure that the admission control plugin ServiceAccount is set (Automated)",
+                                        "test_number": "1.2.14"
+                                    },
+                                    {
+                                        "remediation": "Edit the API server pod specification file /etc/kubernetes/manifests/kube-apiserver.yaml\non the master node and set the --disable-admission-plugins parameter to\nensure it does not include NamespaceLifecycle.\n",
+                                        "scored": true,
+                                        "status": "PASS",
+                                        "test_desc": "Ensure that the admission control plugin NamespaceLifecycle is set (Automated)",
+                                        "test_number": "1.2.15"
+                                    },
+                                    {
+                                        "remediation": "Follow the documentation and create Pod Security Policy objects as per your environment.\nThen, edit the API server pod specification file /etc/kubernetes/manifests/kube-apiserver.yaml\non the master node and set the --enable-admission-plugins parameter to a\nvalue that includes PodSecurityPolicy:\n--enable-admission-plugins=...,PodSecurityPolicy,...\nThen restart the API Server.\n",
+                                        "scored": true,
+                                        "status": "FAIL",
+                                        "test_desc": "Ensure that the admission control plugin PodSecurityPolicy is set (Automated)",
+                                        "test_number": "1.2.16"
+                                    },
+                                    {
+                                        "remediation": "Follow the Kubernetes documentation and configure NodeRestriction plug-in on kubelets.\nThen, edit the API server pod specification file /etc/kubernetes/manifests/kube-apiserver.yaml\non the master node and set the --enable-admission-plugins parameter to a\nvalue that includes NodeRestriction.\n--enable-admission-plugins=...,NodeRestriction,...\n",
+                                        "scored": true,
+                                        "status": "PASS",
+                                        "test_desc": "Ensure that the admission control plugin NodeRestriction is set (Automated)",
+                                        "test_number": "1.2.17"
+                                    },
+                                    {
+                                        "remediation": "Edit the API server pod specification file /etc/kubernetes/manifests/kube-apiserver.yaml\non the master node and remove the --insecure-bind-address parameter.\n",
+                                        "scored": true,
+                                        "status": "PASS",
+                                        "test_desc": "Ensure that the --insecure-bind-address argument is not set (Automated)",
+                                        "test_number": "1.2.18"
+                                    },
+                                    {
+                                        "remediation": "Edit the API server pod specification file /etc/kubernetes/manifests/kube-apiserver.yaml\non the master node and set the below parameter.\n--insecure-port=0\n",
+                                        "scored": true,
+                                        "status": "PASS",
+                                        "test_desc": "Ensure that the --insecure-port argument is set to 0 (Automated)",
+                                        "test_number": "1.2.19"
+                                    },
+                                    {
+                                        "remediation": "Edit the API server pod specification file /etc/kubernetes/manifests/kube-apiserver.yaml\non the master node and either remove the --secure-port parameter or\nset it to a different (non-zero) desired port.\n",
+                                        "scored": true,
+                                        "status": "PASS",
+                                        "test_desc": "Ensure that the --secure-port argument is not set to 0 (Automated)",
+                                        "test_number": "1.2.20"
+                                    },
+                                    {
+                                        "remediation": "Edit the API server pod specification file /etc/kubernetes/manifests/kube-apiserver.yaml\non the master node and set the below parameter.\n--profiling=false\n",
+                                        "scored": true,
+                                        "status": "FAIL",
+                                        "test_desc": "Ensure that the --profiling argument is set to false (Automated)",
+                                        "test_number": "1.2.21"
+                                    },
+                                    {
+                                        "remediation": "Edit the API server pod specification file /etc/kubernetes/manifests/kube-apiserver.yaml\non the master node and set the --audit-log-path parameter to a suitable path and\nfile where you would like audit logs to be written, for example:\n--audit-log-path=/var/log/apiserver/audit.log\n",
+                                        "scored": true,
+                                        "status": "FAIL",
+                                        "test_desc": "Ensure that the --audit-log-path argument is set (Automated)",
+                                        "test_number": "1.2.22"
+                                    },
+                                    {
+                                        "remediation": "Edit the API server pod specification file /etc/kubernetes/manifests/kube-apiserver.yaml\non the master node and set the --audit-log-maxage parameter to 30 or as an appropriate number of days:\n--audit-log-maxage=30\n",
+                                        "scored": true,
+                                        "status": "FAIL",
+                                        "test_desc": "Ensure that the --audit-log-maxage argument is set to 30 or as appropriate (Automated)",
+                                        "test_number": "1.2.23"
+                                    },
+                                    {
+                                        "remediation": "Edit the API server pod specification file /etc/kubernetes/manifests/kube-apiserver.yaml\non the master node and set the --audit-log-maxbackup parameter to 10 or to an appropriate\nvalue.\n--audit-log-maxbackup=10\n",
+                                        "scored": true,
+                                        "status": "FAIL",
+                                        "test_desc": "Ensure that the --audit-log-maxbackup argument is set to 10 or as appropriate (Automated)",
+                                        "test_number": "1.2.24"
+                                    },
+                                    {
+                                        "remediation": "Edit the API server pod specification file /etc/kubernetes/manifests/kube-apiserver.yaml\non the master node and set the --audit-log-maxsize parameter to an appropriate size in MB.\nFor example, to set it as 100 MB:\n--audit-log-maxsize=100\n",
+                                        "scored": true,
+                                        "status": "FAIL",
+                                        "test_desc": "Ensure that the --audit-log-maxsize argument is set to 100 or as appropriate (Automated)",
+                                        "test_number": "1.2.25"
+                                    },
+                                    {
+                                        "remediation": "Edit the API server pod specification file /etc/kubernetes/manifests/kube-apiserver.yaml\nand set the below parameter as appropriate and if needed.\nFor example,\n--request-timeout=300s\n",
+                                        "scored": true,
+                                        "status": "PASS",
+                                        "test_desc": "Ensure that the --request-timeout argument is set as appropriate (Automated)",
+                                        "test_number": "1.2.26"
+                                    },
+                                    {
+                                        "remediation": "Edit the API server pod specification file /etc/kubernetes/manifests/kube-apiserver.yaml\non the master node and set the below parameter.\n--service-account-lookup=true\nAlternatively, you can delete the --service-account-lookup parameter from this file so\nthat the default takes effect.\n",
+                                        "scored": true,
+                                        "status": "PASS",
+                                        "test_desc": "Ensure that the --service-account-lookup argument is set to true (Automated)",
+                                        "test_number": "1.2.27"
+                                    },
+                                    {
+                                        "remediation": "Edit the API server pod specification file /etc/kubernetes/manifests/kube-apiserver.yaml\non the master node and set the --service-account-key-file parameter\nto the public key file for service accounts:\n--service-account-key-file=\u003cfilename\u003e\n",
+                                        "scored": true,
+                                        "status": "PASS",
+                                        "test_desc": "Ensure that the --service-account-key-file argument is set as appropriate (Automated)",
+                                        "test_number": "1.2.28"
+                                    },
+                                    {
+                                        "remediation": "Follow the Kubernetes documentation and set up the TLS connection between the apiserver and etcd.\nThen, edit the API server pod specification file /etc/kubernetes/manifests/kube-apiserver.yaml\non the master node and set the etcd certificate and key file parameters.\n--etcd-certfile=\u003cpath/to/client-certificate-file\u003e\n--etcd-keyfile=\u003cpath/to/client-key-file\u003e\n",
+                                        "scored": true,
+                                        "status": "PASS",
+                                        "test_desc": "Ensure that the --etcd-certfile and --etcd-keyfile arguments are set as appropriate (Automated)",
+                                        "test_number": "1.2.29"
+                                    },
+                                    {
+                                        "remediation": "Follow the Kubernetes documentation and set up the TLS connection on the apiserver.\nThen, edit the API server pod specification file /etc/kubernetes/manifests/kube-apiserver.yaml\non the master node and set the TLS certificate and private key file parameters.\n--tls-cert-file=\u003cpath/to/tls-certificate-file\u003e\n--tls-private-key-file=\u003cpath/to/tls-key-file\u003e\n",
+                                        "scored": true,
+                                        "status": "PASS",
+                                        "test_desc": "Ensure that the --tls-cert-file and --tls-private-key-file arguments are set as appropriate (Automated)",
+                                        "test_number": "1.2.30"
+                                    },
+                                    {
+                                        "remediation": "Follow the Kubernetes documentation and set up the TLS connection on the apiserver.\nThen, edit the API server pod specification file /etc/kubernetes/manifests/kube-apiserver.yaml\non the master node and set the client certificate authority file.\n--client-ca-file=\u003cpath/to/client-ca-file\u003e\n",
+                                        "scored": true,
+                                        "status": "PASS",
+                                        "test_desc": "Ensure that the --client-ca-file argument is set as appropriate (Automated)",
+                                        "test_number": "1.2.31"
+                                    },
+                                    {
+                                        "remediation": "Follow the Kubernetes documentation and set up the TLS connection between the apiserver and etcd.\nThen, edit the API server pod specification file /etc/kubernetes/manifests/kube-apiserver.yaml\non the master node and set the etcd certificate authority file parameter.\n--etcd-cafile=\u003cpath/to/ca-file\u003e\n",
+                                        "scored": true,
+                                        "status": "PASS",
+                                        "test_desc": "Ensure that the --etcd-cafile argument is set as appropriate (Automated)",
+                                        "test_number": "1.2.32"
+                                    },
+                                    {
+                                        "remediation": "Follow the Kubernetes documentation and configure a EncryptionConfig file.\nThen, edit the API server pod specification file /etc/kubernetes/manifests/kube-apiserver.yaml\non the master node and set the --encryption-provider-config parameter to the path of that file: --encryption-provider-config=\u003c/path/to/EncryptionConfig/File\u003e\n",
+                                        "scored": false,
+                                        "status": "WARN",
+                                        "test_desc": "Ensure that the --encryption-provider-config argument is set as appropriate (Manual)",
+                                        "test_number": "1.2.33"
+                                    },
+                                    {
+                                        "remediation": "Follow the Kubernetes documentation and configure a EncryptionConfig file.\nIn this file, choose aescbc, kms or secretbox as the encryption provider.\n",
+                                        "scored": false,
+                                        "status": "WARN",
+                                        "test_desc": "Ensure that encryption providers are appropriately configured (Manual)",
+                                        "test_number": "1.2.34"
+                                    },
+                                    {
+                                        "remediation": "Edit the API server pod specification file /etc/kubernetes/manifests/kube-apiserver.yaml\non the master node and set the below parameter.\n--tls-cipher-suites=TLS_ECDHE_ECDSA_WITH_AES_128_GCM_SHA256,TLS_ECDHE_RSA_WITH_AES_128_GCM\n_SHA256,TLS_ECDHE_ECDSA_WITH_CHACHA20_POLY1305,TLS_ECDHE_RSA_WITH_AES_256_GCM\n_SHA384,TLS_ECDHE_RSA_WITH_CHACHA20_POLY1305,TLS_ECDHE_ECDSA_WITH_AES_256_GCM\n_SHA384\n",
+                                        "scored": false,
+                                        "status": "WARN",
+                                        "test_desc": "Ensure that the API Server only makes use of Strong Cryptographic Ciphers (Manual)",
+                                        "test_number": "1.2.35"
+                                    }
+                                ],
+                                "section": "1.2",
+                                "warn": 7
+                            },
+                            {
+                                "desc": "Controller Manager",
+                                "fail": 1,
+                                "info": 0,
+                                "pass": 5,
+                                "results": [
+                                    {
+                                        "remediation": "Edit the Controller Manager pod specification file /etc/kubernetes/manifests/kube-controller-manager.yaml\non the master node and set the --terminated-pod-gc-threshold to an appropriate threshold,\nfor example:\n--terminated-pod-gc-threshold=10\n",
+                                        "scored": false,
+                                        "status": "WARN",
+                                        "test_desc": "Ensure that the --terminated-pod-gc-threshold argument is set as appropriate (Manual)",
+                                        "test_number": "1.3.1"
+                                    },
+                                    {
+                                        "remediation": "Edit the Controller Manager pod specification file /etc/kubernetes/manifests/kube-controller-manager.yaml\non the master node and set the below parameter.\n--profiling=false\n",
+                                        "scored": true,
+                                        "status": "FAIL",
+                                        "test_desc": "Ensure that the --profiling argument is set to false (Automated)",
+                                        "test_number": "1.3.2"
+                                    },
+                                    {
+                                        "remediation": "Edit the Controller Manager pod specification file /etc/kubernetes/manifests/kube-controller-manager.yaml\non the master node to set the below parameter.\n--use-service-account-credentials=true\n",
+                                        "scored": true,
+                                        "status": "PASS",
+                                        "test_desc": "Ensure that the --use-service-account-credentials argument is set to true (Automated)",
+                                        "test_number": "1.3.3"
+                                    },
+                                    {
+                                        "remediation": "Edit the Controller Manager pod specification file /etc/kubernetes/manifests/kube-controller-manager.yaml\non the master node and set the --service-account-private-key-file parameter\nto the private key file for service accounts.\n--service-account-private-key-file=\u003cfilename\u003e\n",
+                                        "scored": true,
+                                        "status": "PASS",
+                                        "test_desc": "Ensure that the --service-account-private-key-file argument is set as appropriate (Automated)",
+                                        "test_number": "1.3.4"
+                                    },
+                                    {
+                                        "remediation": "Edit the Controller Manager pod specification file /etc/kubernetes/manifests/kube-controller-manager.yaml\non the master node and set the --root-ca-file parameter to the certificate bundle file`.\n--root-ca-file=\u003cpath/to/file\u003e\n",
+                                        "scored": true,
+                                        "status": "PASS",
+                                        "test_desc": "Ensure that the --root-ca-file argument is set as appropriate (Automated)",
+                                        "test_number": "1.3.5"
+                                    },
+                                    {
+                                        "remediation": "Edit the Controller Manager pod specification file /etc/kubernetes/manifests/kube-controller-manager.yaml\non the master node and set the --feature-gates parameter to include RotateKubeletServerCertificate=true.\n--feature-gates=RotateKubeletServerCertificate=true\n",
+                                        "scored": true,
+                                        "status": "PASS",
+                                        "test_desc": "Ensure that the RotateKubeletServerCertificate argument is set to true (Automated)",
+                                        "test_number": "1.3.6"
+                                    },
+                                    {
+                                        "remediation": "Edit the Controller Manager pod specification file /etc/kubernetes/manifests/kube-controller-manager.yaml\non the master node and ensure the correct value for the --bind-address parameter\n",
+                                        "scored": true,
+                                        "status": "PASS",
+                                        "test_desc": "Ensure that the --bind-address argument is set to 127.0.0.1 (Automated)",
+                                        "test_number": "1.3.7"
+                                    }
+                                ],
+                                "section": "1.3",
+                                "warn": 1
+                            },
+                            {
+                                "desc": "Scheduler",
+                                "fail": 1,
+                                "info": 0,
+                                "pass": 1,
+                                "results": [
+                                    {
+                                        "remediation": "Edit the Scheduler pod specification file /etc/kubernetes/manifests/kube-scheduler.yaml file\non the master node and set the below parameter.\n--profiling=false\n",
+                                        "scored": true,
+                                        "status": "FAIL",
+                                        "test_desc": "Ensure that the --profiling argument is set to false (Automated)",
+                                        "test_number": "1.4.1"
+                                    },
+                                    {
+                                        "remediation": "Edit the Scheduler pod specification file /etc/kubernetes/manifests/kube-scheduler.yaml\non the master node and ensure the correct value for the --bind-address parameter\n",
+                                        "scored": true,
+                                        "status": "PASS",
+                                        "test_desc": "Ensure that the --bind-address argument is set to 127.0.0.1 (Automated)",
+                                        "test_number": "1.4.2"
+                                    }
+                                ],
+                                "section": "1.4",
+                                "warn": 0
+                            }
+                        ],
+                        "text": "Master Node Security Configuration",
+                        "total_fail": 10,
+                        "total_info": 0,
+                        "total_pass": 45,
+                        "total_warn": 10,
+                        "version": "1.6"
+                    },
+                    {
+                        "id": "2",
+                        "node_type": "etcd",
+                        "tests": [
+                            {
+                                "desc": "Etcd Node Configuration Files",
+                                "fail": 0,
+                                "info": 0,
+                                "pass": 7,
+                                "results": [
+                                    {
+                                        "remediation": "Follow the etcd service documentation and configure TLS encryption.\nThen, edit the etcd pod specification file /etc/kubernetes/manifests/etcd.yaml\non the master node and set the below parameters.\n--cert-file=\u003c/path/to/ca-file\u003e\n--key-file=\u003c/path/to/key-file\u003e\n",
+                                        "scored": true,
+                                        "status": "PASS",
+                                        "test_desc": "Ensure that the --cert-file and --key-file arguments are set as appropriate (Automated)",
+                                        "test_number": "2.1"
+                                    },
+                                    {
+                                        "remediation": "Edit the etcd pod specification file /etc/kubernetes/manifests/etcd.yaml on the master\nnode and set the below parameter.\n--client-cert-auth=\"true\"\n",
+                                        "scored": true,
+                                        "status": "PASS",
+                                        "test_desc": "Ensure that the --client-cert-auth argument is set to true (Automated)",
+                                        "test_number": "2.2"
+                                    },
+                                    {
+                                        "remediation": "Edit the etcd pod specification file /etc/kubernetes/manifests/etcd.yaml on the master\nnode and either remove the --auto-tls parameter or set it to false.\n  --auto-tls=false\n",
+                                        "scored": true,
+                                        "status": "PASS",
+                                        "test_desc": "Ensure that the --auto-tls argument is not set to true (Automated)",
+                                        "test_number": "2.3"
+                                    },
+                                    {
+                                        "remediation": "Follow the etcd service documentation and configure peer TLS encryption as appropriate\nfor your etcd cluster.\nThen, edit the etcd pod specification file /etc/kubernetes/manifests/etcd.yaml on the\nmaster node and set the below parameters.\n--peer-client-file=\u003c/path/to/peer-cert-file\u003e\n--peer-key-file=\u003c/path/to/peer-key-file\u003e\n",
+                                        "scored": true,
+                                        "status": "PASS",
+                                        "test_desc": "Ensure that the --peer-cert-file and --peer-key-file arguments are set as appropriate (Automated)",
+                                        "test_number": "2.4"
+                                    },
+                                    {
+                                        "remediation": "Edit the etcd pod specification file /etc/kubernetes/manifests/etcd.yaml on the master\nnode and set the below parameter.\n--peer-client-cert-auth=true\n",
+                                        "scored": true,
+                                        "status": "PASS",
+                                        "test_desc": "Ensure that the --peer-client-cert-auth argument is set to true (Automated)",
+                                        "test_number": "2.5"
+                                    },
+                                    {
+                                        "remediation": "Edit the etcd pod specification file /etc/kubernetes/manifests/etcd.yaml on the master\nnode and either remove the --peer-auto-tls parameter or set it to false.\n--peer-auto-tls=false\n",
+                                        "scored": true,
+                                        "status": "PASS",
+                                        "test_desc": "Ensure that the --peer-auto-tls argument is not set to true (Automated)",
+                                        "test_number": "2.6"
+                                    },
+                                    {
+                                        "remediation": "[Manual test]\nFollow the etcd documentation and create a dedicated certificate authority setup for the\netcd service.\nThen, edit the etcd pod specification file /etc/kubernetes/manifests/etcd.yaml on the\nmaster node and set the below parameter.\n--trusted-ca-file=\u003c/path/to/ca-file\u003e\n",
+                                        "scored": false,
+                                        "status": "PASS",
+                                        "test_desc": "Ensure that a unique Certificate Authority is used for etcd (Manual)",
+                                        "test_number": "2.7"
+                                    }
+                                ],
+                                "section": "2",
+                                "warn": 0
+                            }
+                        ],
+                        "text": "Etcd Node Configuration",
+                        "total_fail": 0,
+                        "total_info": 0,
+                        "total_pass": 7,
+                        "total_warn": 0,
+                        "version": "1.6"
+                    },
+                    {
+                        "id": "3",
+                        "node_type": "controlplane",
+                        "tests": [
+                            {
+                                "desc": "Authentication and Authorization",
+                                "fail": 0,
+                                "info": 0,
+                                "pass": 0,
+                                "results": [
+                                    {
+                                        "remediation": "Alternative mechanisms provided by Kubernetes such as the use of OIDC should be\nimplemented in place of client certificates.\n",
+                                        "scored": false,
+                                        "status": "WARN",
+                                        "test_desc": "Client certificate authentication should not be used for users (Manual)",
+                                        "test_number": "3.1.1"
+                                    }
+                                ],
+                                "section": "3.1",
+                                "warn": 1
+                            },
+                            {
+                                "desc": "Logging",
+                                "fail": 0,
+                                "info": 0,
+                                "pass": 0,
+                                "results": [
+                                    {
+                                        "remediation": "Create an audit policy file for your cluster.\n",
+                                        "scored": false,
+                                        "status": "WARN",
+                                        "test_desc": "Ensure that a minimal audit policy is created (Manual)",
+                                        "test_number": "3.2.1"
+                                    },
+                                    {
+                                        "remediation": "Consider modification of the audit policy in use on the cluster to include these items, at a\nminimum.\n",
+                                        "scored": false,
+                                        "status": "WARN",
+                                        "test_desc": "Ensure that the audit policy covers key security concerns (Manual)",
+                                        "test_number": "3.2.2"
+                                    }
+                                ],
+                                "section": "3.2",
+                                "warn": 2
+                            }
+                        ],
+                        "text": "Control Plane Configuration",
+                        "total_fail": 0,
+                        "total_info": 0,
+                        "total_pass": 0,
+                        "total_warn": 3,
+                        "version": "1.6"
+                    },
+                    {
+                        "id": "4",
+                        "node_type": "node",
+                        "tests": [
+                            {
+                                "desc": "Worker Node Configuration Files",
+                                "fail": 1,
+                                "info": 0,
+                                "pass": 9,
+                                "results": [
+                                    {
+                                        "remediation": "Run the below command (based on the file location on your system) on the each worker node.\nFor example,\nchmod 644 /etc/systemd/system/kubelet.service.d/10-kubeadm.conf\n",
+                                        "scored": true,
+                                        "status": "FAIL",
+                                        "test_desc": "Ensure that the kubelet service file permissions are set to 644 or more restrictive (Automated)",
+                                        "test_number": "4.1.1"
+                                    },
+                                    {
+                                        "remediation": "Run the below command (based on the file location on your system) on the each worker node.\nFor example,\nchown root:root /etc/systemd/system/kubelet.service.d/10-kubeadm.conf\n",
+                                        "scored": true,
+                                        "status": "PASS",
+                                        "test_desc": "Ensure that the kubelet service file ownership is set to root:root (Automated)",
+                                        "test_number": "4.1.2"
+                                    },
+                                    {
+                                        "remediation": "Run the below command (based on the file location on your system) on the each worker node.\nFor example,\nchmod 644 /etc/kubernetes/proxy.conf\n",
+                                        "scored": false,
+                                        "status": "PASS",
+                                        "test_desc": "If proxy kubeconfig file exists ensure permissions are set to 644 or more restrictive (Manual)",
+                                        "test_number": "4.1.3"
+                                    },
+                                    {
+                                        "remediation": "Run the below command (based on the file location on your system) on the each worker node.\nFor example, chown root:root /etc/kubernetes/proxy.conf\n",
+                                        "scored": false,
+                                        "status": "PASS",
+                                        "test_desc": "Ensure that the proxy kubeconfig file ownership is set to root:root (Manual)",
+                                        "test_number": "4.1.4"
+                                    },
+                                    {
+                                        "remediation": "Run the below command (based on the file location on your system) on the each worker node.\nFor example,\nchmod 644 /etc/kubernetes/kubelet.conf\n",
+                                        "scored": true,
+                                        "status": "PASS",
+                                        "test_desc": "Ensure that the --kubeconfig kubelet.conf file permissions are set to 644 or more restrictive (Automated)",
+                                        "test_number": "4.1.5"
+                                    },
+                                    {
+                                        "remediation": "Run the below command (based on the file location on your system) on the each worker node.\nFor example,\nchown root:root /etc/kubernetes/kubelet.conf\n",
+                                        "scored": false,
+                                        "status": "PASS",
+                                        "test_desc": "Ensure that the --kubeconfig kubelet.conf file ownership is set to root:root (Manual)",
+                                        "test_number": "4.1.6"
+                                    },
+                                    {
+                                        "remediation": "Run the following command to modify the file permissions of the\n--client-ca-file chmod 644 \u003cfilename\u003e\n",
+                                        "scored": false,
+                                        "status": "PASS",
+                                        "test_desc": "Ensure that the certificate authorities file permissions are set to 644 or more restrictive (Manual)",
+                                        "test_number": "4.1.7"
+                                    },
+                                    {
+                                        "remediation": "Run the following command to modify the ownership of the --client-ca-file.\nchown root:root \u003cfilename\u003e\n",
+                                        "scored": false,
+                                        "status": "PASS",
+                                        "test_desc": "Ensure that the client certificate authorities file ownership is set to root:root (Manual)",
+                                        "test_number": "4.1.8"
+                                    },
+                                    {
+                                        "remediation": "Run the following command (using the config file location identified in the Audit step)\nchmod 644 /var/lib/kubelet/config.yaml\n",
+                                        "scored": true,
+                                        "status": "PASS",
+                                        "test_desc": "Ensure that the kubelet --config configuration file has permissions set to 644 or more restrictive (Automated)",
+                                        "test_number": "4.1.9"
+                                    },
+                                    {
+                                        "remediation": "Run the following command (using the config file location identified in the Audit step)\nchown root:root /var/lib/kubelet/config.yaml\n",
+                                        "scored": true,
+                                        "status": "PASS",
+                                        "test_desc": "Ensure that the kubelet --config configuration file ownership is set to root:root (Automated)",
+                                        "test_number": "4.1.10"
+                                    }
+                                ],
+                                "section": "4.1",
+                                "warn": 0
+                            },
+                            {
+                                "desc": "Kubelet",
+                                "fail": 1,
+                                "info": 0,
+                                "pass": 9,
+                                "results": [
+                                    {
+                                        "remediation": "If using a Kubelet config file, edit the file to set authentication: anonymous: enabled to\nfalse.\nIf using executable arguments, edit the kubelet service file\n/etc/systemd/system/kubelet.service.d/10-kubeadm.conf on each worker node and\nset the below parameter in KUBELET_SYSTEM_PODS_ARGS variable.\n--anonymous-auth=false\nBased on your system, restart the kubelet service. For example:\nsystemctl daemon-reload\nsystemctl restart kubelet.service\n",
+                                        "scored": true,
+                                        "status": "PASS",
+                                        "test_desc": "Ensure that the anonymous-auth argument is set to false (Automated)",
+                                        "test_number": "4.2.1"
+                                    },
+                                    {
+                                        "remediation": "If using a Kubelet config file, edit the file to set authorization: mode to Webhook. If\nusing executable arguments, edit the kubelet service file\n/etc/systemd/system/kubelet.service.d/10-kubeadm.conf on each worker node and\nset the below parameter in KUBELET_AUTHZ_ARGS variable.\n--authorization-mode=Webhook\nBased on your system, restart the kubelet service. For example:\nsystemctl daemon-reload\nsystemctl restart kubelet.service\n",
+                                        "scored": true,
+                                        "status": "PASS",
+                                        "test_desc": "Ensure that the --authorization-mode argument is not set to AlwaysAllow (Automated)",
+                                        "test_number": "4.2.2"
+                                    },
+                                    {
+                                        "remediation": "If using a Kubelet config file, edit the file to set authentication: x509: clientCAFile to\nthe location of the client CA file.\nIf using command line arguments, edit the kubelet service file\n/etc/systemd/system/kubelet.service.d/10-kubeadm.conf on each worker node and\nset the below parameter in KUBELET_AUTHZ_ARGS variable.\n--client-ca-file=\u003cpath/to/client-ca-file\u003e\nBased on your system, restart the kubelet service. For example:\nsystemctl daemon-reload\nsystemctl restart kubelet.service\n",
+                                        "scored": true,
+                                        "status": "PASS",
+                                        "test_desc": "Ensure that the --client-ca-file argument is set as appropriate (Automated)",
+                                        "test_number": "4.2.3"
+                                    },
+                                    {
+                                        "remediation": "If using a Kubelet config file, edit the file to set readOnlyPort to 0.\nIf using command line arguments, edit the kubelet service file\n/etc/systemd/system/kubelet.service.d/10-kubeadm.conf on each worker node and\nset the below parameter in KUBELET_SYSTEM_PODS_ARGS variable.\n--read-only-port=0\nBased on your system, restart the kubelet service. For example:\nsystemctl daemon-reload\nsystemctl restart kubelet.service\n",
+                                        "scored": false,
+                                        "status": "PASS",
+                                        "test_desc": "Ensure that the --read-only-port argument is set to 0 (Manual)",
+                                        "test_number": "4.2.4"
+                                    },
+                                    {
+                                        "remediation": "If using a Kubelet config file, edit the file to set streamingConnectionIdleTimeout to a\nvalue other than 0.\nIf using command line arguments, edit the kubelet service file\n/etc/systemd/system/kubelet.service.d/10-kubeadm.conf on each worker node and\nset the below parameter in KUBELET_SYSTEM_PODS_ARGS variable.\n--streaming-connection-idle-timeout=5m\nBased on your system, restart the kubelet service. For example:\nsystemctl daemon-reload\nsystemctl restart kubelet.service\n",
+                                        "scored": false,
+                                        "status": "PASS",
+                                        "test_desc": "Ensure that the --streaming-connection-idle-timeout argument is not set to 0 (Manual)",
+                                        "test_number": "4.2.5"
+                                    },
+                                    {
+                                        "remediation": "If using a Kubelet config file, edit the file to set protectKernelDefaults: true.\nIf using command line arguments, edit the kubelet service file\n/etc/systemd/system/kubelet.service.d/10-kubeadm.conf on each worker node and\nset the below parameter in KUBELET_SYSTEM_PODS_ARGS variable.\n--protect-kernel-defaults=true\nBased on your system, restart the kubelet service. For example:\nsystemctl daemon-reload\nsystemctl restart kubelet.service\n",
+                                        "scored": true,
+                                        "status": "FAIL",
+                                        "test_desc": "Ensure that the --protect-kernel-defaults argument is set to true (Automated)",
+                                        "test_number": "4.2.6"
+                                    },
+                                    {
+                                        "remediation": "If using a Kubelet config file, edit the file to set makeIPTablesUtilChains: true.\nIf using command line arguments, edit the kubelet service file\n/etc/systemd/system/kubelet.service.d/10-kubeadm.conf on each worker node and\nremove the --make-iptables-util-chains argument from the\nKUBELET_SYSTEM_PODS_ARGS variable.\nBased on your system, restart the kubelet service. For example:\nsystemctl daemon-reload\nsystemctl restart kubelet.service\n",
+                                        "scored": true,
+                                        "status": "PASS",
+                                        "test_desc": "Ensure that the --make-iptables-util-chains argument is set to true (Automated)",
+                                        "test_number": "4.2.7"
+                                    },
+                                    {
+                                        "remediation": "Edit the kubelet service file /etc/systemd/system/kubelet.service.d/10-kubeadm.conf\non each worker node and remove the --hostname-override argument from the\nKUBELET_SYSTEM_PODS_ARGS variable.\nBased on your system, restart the kubelet service. For example:\nsystemctl daemon-reload\nsystemctl restart kubelet.service\n",
+                                        "scored": false,
+                                        "status": "PASS",
+                                        "test_desc": "Ensure that the --hostname-override argument is not set (Manual)",
+                                        "test_number": "4.2.8"
+                                    },
+                                    {
+                                        "remediation": "If using a Kubelet config file, edit the file to set eventRecordQPS: to an appropriate level.\nIf using command line arguments, edit the kubelet service file\n/etc/systemd/system/kubelet.service.d/10-kubeadm.conf on each worker node and\nset the below parameter in KUBELET_SYSTEM_PODS_ARGS variable.\nBased on your system, restart the kubelet service. For example:\nsystemctl daemon-reload\nsystemctl restart kubelet.service\n",
+                                        "scored": false,
+                                        "status": "WARN",
+                                        "test_desc": "Ensure that the --event-qps argument is set to 0 or a level which ensures appropriate event capture (Manual)",
+                                        "test_number": "4.2.9"
+                                    },
+                                    {
+                                        "remediation": "If using a Kubelet config file, edit the file to set tlsCertFile to the location\nof the certificate file to use to identify this Kubelet, and tlsPrivateKeyFile\nto the location of the corresponding private key file.\nIf using command line arguments, edit the kubelet service file\n/etc/systemd/system/kubelet.service.d/10-kubeadm.conf on each worker node and\nset the below parameters in KUBELET_CERTIFICATE_ARGS variable.\n--tls-cert-file=\u003cpath/to/tls-certificate-file\u003e\n--tls-private-key-file=\u003cpath/to/tls-key-file\u003e\nBased on your system, restart the kubelet service. For example:\nsystemctl daemon-reload\nsystemctl restart kubelet.service\n",
+                                        "scored": false,
+                                        "status": "WARN",
+                                        "test_desc": "Ensure that the --tls-cert-file and --tls-private-key-file arguments are set as appropriate (Manual)",
+                                        "test_number": "4.2.10"
+                                    },
+                                    {
+                                        "remediation": "If using a Kubelet config file, edit the file to add the line rotateCertificates: true or\nremove it altogether to use the default value.\nIf using command line arguments, edit the kubelet service file\n/etc/systemd/system/kubelet.service.d/10-kubeadm.conf on each worker node and\nremove --rotate-certificates=false argument from the KUBELET_CERTIFICATE_ARGS\nvariable.\nBased on your system, restart the kubelet service. For example:\nsystemctl daemon-reload\nsystemctl restart kubelet.service\n",
+                                        "scored": false,
+                                        "status": "PASS",
+                                        "test_desc": "Ensure that the --rotate-certificates argument is not set to false (Manual)",
+                                        "test_number": "4.2.11"
+                                    },
+                                    {
+                                        "remediation": "Edit the kubelet service file /etc/systemd/system/kubelet.service.d/10-kubeadm.conf\non each worker node and set the below parameter in KUBELET_CERTIFICATE_ARGS variable.\n--feature-gates=RotateKubeletServerCertificate=true\nBased on your system, restart the kubelet service. For example:\nsystemctl daemon-reload\nsystemctl restart kubelet.service\n",
+                                        "scored": false,
+                                        "status": "PASS",
+                                        "test_desc": "Verify that the RotateKubeletServerCertificate argument is set to true (Manual)",
+                                        "test_number": "4.2.12"
+                                    },
+                                    {
+                                        "remediation": "If using a Kubelet config file, edit the file to set TLSCipherSuites: to\nTLS_ECDHE_ECDSA_WITH_AES_128_GCM_SHA256,TLS_ECDHE_RSA_WITH_AES_128_GCM_SHA256,TLS_ECDHE_ECDSA_WITH_CHACHA20_POLY1305,TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384,TLS_ECDHE_RSA_WITH_CHACHA20_POLY1305,TLS_ECDHE_ECDSA_WITH_AES_256_GCM_SHA384,TLS_RSA_WITH_AES_256_GCM_SHA384,TLS_RSA_WITH_AES_128_GCM_SHA256\nor to a subset of these values.\nIf using executable arguments, edit the kubelet service file\n/etc/systemd/system/kubelet.service.d/10-kubeadm.conf on each worker node and\nset the --tls-cipher-suites parameter as follows, or to a subset of these values.\n--tls-cipher-suites=TLS_ECDHE_ECDSA_WITH_AES_128_GCM_SHA256,TLS_ECDHE_RSA_WITH_AES_128_GCM_SHA256,TLS_ECDHE_ECDSA_WITH_CHACHA20_POLY1305,TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384,TLS_ECDHE_RSA_WITH_CHACHA20_POLY1305,TLS_ECDHE_ECDSA_WITH_AES_256_GCM_SHA384,TLS_RSA_WITH_AES_256_GCM_SHA384,TLS_RSA_WITH_AES_128_GCM_SHA256\nBased on your system, restart the kubelet service. For example:\nsystemctl daemon-reload\nsystemctl restart kubelet.service\n",
+                                        "scored": false,
+                                        "status": "WARN",
+                                        "test_desc": "Ensure that the Kubelet only makes use of Strong Cryptographic Ciphers (Manual)",
+                                        "test_number": "4.2.13"
+                                    }
+                                ],
+                                "section": "4.2",
+                                "warn": 3
+                            }
+                        ],
+                        "text": "Worker Node Security Configuration",
+                        "total_fail": 2,
+                        "total_info": 0,
+                        "total_pass": 18,
+                        "total_warn": 3,
+                        "version": "1.6"
+                    },
+                    {
+                        "id": "5",
+                        "node_type": "policies",
+                        "tests": [
+                            {
+                                "desc": "RBAC and Service Accounts",
+                                "fail": 0,
+                                "info": 0,
+                                "pass": 0,
+                                "results": [
+                                    {
+                                        "remediation": "Identify all clusterrolebindings to the cluster-admin role. Check if they are used and\nif they need this role or if they could use a role with fewer privileges.\nWhere possible, first bind users to a lower privileged role and then remove the\nclusterrolebinding to the cluster-admin role :\nkubectl delete clusterrolebinding [name]\n",
+                                        "scored": false,
+                                        "status": "WARN",
+                                        "test_desc": "Ensure that the cluster-admin role is only used where required (Manual)",
+                                        "test_number": "5.1.1"
+                                    },
+                                    {
+                                        "remediation": "Where possible, remove get, list and watch access to secret objects in the cluster.\n",
+                                        "scored": false,
+                                        "status": "WARN",
+                                        "test_desc": "Minimize access to secrets (Manual)",
+                                        "test_number": "5.1.2"
+                                    },
+                                    {
+                                        "remediation": "Where possible replace any use of wildcards in clusterroles and roles with specific\nobjects or actions.\n",
+                                        "scored": false,
+                                        "status": "WARN",
+                                        "test_desc": "Minimize wildcard use in Roles and ClusterRoles (Manual)",
+                                        "test_number": "5.1.3"
+                                    },
+                                    {
+                                        "remediation": "Where possible, remove create access to pod objects in the cluster.\n",
+                                        "scored": false,
+                                        "status": "WARN",
+                                        "test_desc": "Minimize access to create pods (Manual)",
+                                        "test_number": "5.1.4"
+                                    },
+                                    {
+                                        "remediation": "Create explicit service accounts wherever a Kubernetes workload requires specific access\nto the Kubernetes API server.\nModify the configuration of each default service account to include this value\nautomountServiceAccountToken: false\n",
+                                        "scored": false,
+                                        "status": "WARN",
+                                        "test_desc": "Ensure that default service accounts are not actively used. (Manual)",
+                                        "test_number": "5.1.5"
+                                    },
+                                    {
+                                        "remediation": "Modify the definition of pods and service accounts which do not need to mount service\naccount tokens to disable it.\n",
+                                        "scored": false,
+                                        "status": "WARN",
+                                        "test_desc": "Ensure that Service Account Tokens are only mounted where necessary (Manual)",
+                                        "test_number": "5.1.6"
+                                    }
+                                ],
+                                "section": "5.1",
+                                "warn": 6
+                            },
+                            {
+                                "desc": "Pod Security Policies",
+                                "fail": 0,
+                                "info": 0,
+                                "pass": 0,
+                                "results": [
+                                    {
+                                        "remediation": "Create a PSP as described in the Kubernetes documentation, ensuring that\nthe .spec.privileged field is omitted or set to false.\n",
+                                        "scored": false,
+                                        "status": "WARN",
+                                        "test_desc": "Minimize the admission of privileged containers (Manual)",
+                                        "test_number": "5.2.1"
+                                    },
+                                    {
+                                        "remediation": "Create a PSP as described in the Kubernetes documentation, ensuring that the\n.spec.hostPID field is omitted or set to false.\n",
+                                        "scored": false,
+                                        "status": "WARN",
+                                        "test_desc": "Minimize the admission of containers wishing to share the host process ID namespace (Manual)",
+                                        "test_number": "5.2.2"
+                                    },
+                                    {
+                                        "remediation": "Create a PSP as described in the Kubernetes documentation, ensuring that the\n.spec.hostIPC field is omitted or set to false.\n",
+                                        "scored": false,
+                                        "status": "WARN",
+                                        "test_desc": "Minimize the admission of containers wishing to share the host IPC namespace (Manual)",
+                                        "test_number": "5.2.3"
+                                    },
+                                    {
+                                        "remediation": "Create a PSP as described in the Kubernetes documentation, ensuring that the\n.spec.hostNetwork field is omitted or set to false.\n",
+                                        "scored": false,
+                                        "status": "WARN",
+                                        "test_desc": "Minimize the admission of containers wishing to share the host network namespace (Manual)",
+                                        "test_number": "5.2.4"
+                                    },
+                                    {
+                                        "remediation": "Create a PSP as described in the Kubernetes documentation, ensuring that the\n.spec.allowPrivilegeEscalation field is omitted or set to false.\n",
+                                        "scored": false,
+                                        "status": "WARN",
+                                        "test_desc": "Minimize the admission of containers with allowPrivilegeEscalation (Manual)",
+                                        "test_number": "5.2.5"
+                                    },
+                                    {
+                                        "remediation": "Create a PSP as described in the Kubernetes documentation, ensuring that the\n.spec.runAsUser.rule is set to either MustRunAsNonRoot or MustRunAs with the range of\nUIDs not including 0.\n",
+                                        "scored": false,
+                                        "status": "WARN",
+                                        "test_desc": "Minimize the admission of root containers (Manual)",
+                                        "test_number": "5.2.6"
+                                    },
+                                    {
+                                        "remediation": "Create a PSP as described in the Kubernetes documentation, ensuring that the\n.spec.requiredDropCapabilities is set to include either NET_RAW or ALL.\n",
+                                        "scored": false,
+                                        "status": "WARN",
+                                        "test_desc": "Minimize the admission of containers with the NET_RAW capability (Manual)",
+                                        "test_number": "5.2.7"
+                                    },
+                                    {
+                                        "remediation": "Ensure that allowedCapabilities is not present in PSPs for the cluster unless\nit is set to an empty array.\n",
+                                        "scored": false,
+                                        "status": "WARN",
+                                        "test_desc": "Minimize the admission of containers with added capabilities (Manual)",
+                                        "test_number": "5.2.8"
+                                    },
+                                    {
+                                        "remediation": "Review the use of capabilites in applications runnning on your cluster. Where a namespace\ncontains applicaions which do not require any Linux capabities to operate consider adding\na PSP which forbids the admission of containers which do not drop all capabilities.\n",
+                                        "scored": false,
+                                        "status": "WARN",
+                                        "test_desc": "Minimize the admission of containers with capabilities assigned (Manual)",
+                                        "test_number": "5.2.9"
+                                    }
+                                ],
+                                "section": "5.2",
+                                "warn": 9
+                            },
+                            {
+                                "desc": "Network Policies and CNI",
+                                "fail": 0,
+                                "info": 0,
+                                "pass": 0,
+                                "results": [
+                                    {
+                                        "remediation": "If the CNI plugin in use does not support network policies, consideration should be given to\nmaking use of a different plugin, or finding an alternate mechanism for restricting traffic\nin the Kubernetes cluster.\n",
+                                        "scored": false,
+                                        "status": "WARN",
+                                        "test_desc": "Ensure that the CNI in use supports Network Policies (Manual)",
+                                        "test_number": "5.3.1"
+                                    },
+                                    {
+                                        "remediation": "Follow the documentation and create NetworkPolicy objects as you need them.\n",
+                                        "scored": false,
+                                        "status": "WARN",
+                                        "test_desc": "Ensure that all Namespaces have Network Policies defined (Manual)",
+                                        "test_number": "5.3.2"
+                                    }
+                                ],
+                                "section": "5.3",
+                                "warn": 2
+                            },
+                            {
+                                "desc": "Secrets Management",
+                                "fail": 0,
+                                "info": 0,
+                                "pass": 0,
+                                "results": [
+                                    {
+                                        "remediation": "if possible, rewrite application code to read secrets from mounted secret files, rather than\nfrom environment variables.\n",
+                                        "scored": false,
+                                        "status": "WARN",
+                                        "test_desc": "Prefer using secrets as files over secrets as environment variables (Manual)",
+                                        "test_number": "5.4.1"
+                                    },
+                                    {
+                                        "remediation": "Refer to the secrets management options offered by your cloud provider or a third-party\nsecrets management solution.\n",
+                                        "scored": false,
+                                        "status": "WARN",
+                                        "test_desc": "Consider external secret storage (Manual)",
+                                        "test_number": "5.4.2"
+                                    }
+                                ],
+                                "section": "5.4",
+                                "warn": 2
+                            },
+                            {
+                                "desc": "Extensible Admission Control",
+                                "fail": 0,
+                                "info": 0,
+                                "pass": 0,
+                                "results": [
+                                    {
+                                        "remediation": "Follow the Kubernetes documentation and setup image provenance.\n",
+                                        "scored": false,
+                                        "status": "WARN",
+                                        "test_desc": "Configure Image Provenance using ImagePolicyWebhook admission controller (Manual)",
+                                        "test_number": "5.5.1"
+                                    }
+                                ],
+                                "section": "5.5",
+                                "warn": 1
+                            },
+                            {
+                                "desc": "General Policies",
+                                "fail": 0,
+                                "info": 0,
+                                "pass": 0,
+                                "results": [
+                                    {
+                                        "remediation": "Follow the documentation and create namespaces for objects in your deployment as you need\nthem.\n",
+                                        "scored": false,
+                                        "status": "WARN",
+                                        "test_desc": "Create administrative boundaries between resources using namespaces (Manual)",
+                                        "test_number": "5.7.1"
+                                    },
+                                    {
+                                        "remediation": "Seccomp is an alpha feature currently. By default, all alpha features are disabled. So, you\nwould need to enable alpha features in the apiserver by passing \"--feature-\ngates=AllAlpha=true\" argument.\nEdit the /etc/kubernetes/apiserver file on the master node and set the KUBE_API_ARGS\nparameter to \"--feature-gates=AllAlpha=true\"\nKUBE_API_ARGS=\"--feature-gates=AllAlpha=true\"\nBased on your system, restart the kube-apiserver service. For example:\nsystemctl restart kube-apiserver.service\nUse annotations to enable the docker/default seccomp profile in your pod definitions. An\nexample is as below:\napiVersion: v1\nkind: Pod\nmetadata:\n  name: trustworthy-pod\n  annotations:\n    seccomp.security.alpha.kubernetes.io/pod: docker/default\nspec:\n  containers:\n    - name: trustworthy-container\n      image: sotrustworthy:latest\n",
+                                        "scored": false,
+                                        "status": "WARN",
+                                        "test_desc": "Ensure that the seccomp profile is set to docker/default in your pod definitions (Manual)",
+                                        "test_number": "5.7.2"
+                                    },
+                                    {
+                                        "remediation": "Follow the Kubernetes documentation and apply security contexts to your pods. For a\nsuggested list of security contexts, you may refer to the CIS Security Benchmark for Docker\nContainers.\n",
+                                        "scored": false,
+                                        "status": "WARN",
+                                        "test_desc": "Apply Security Context to Your Pods and Containers (Manual)",
+                                        "test_number": "5.7.3"
+                                    },
+                                    {
+                                        "remediation": "Ensure that namespaces are created to allow for appropriate segregation of Kubernetes\nresources and that all new resources are created in a specific namespace.\n",
+                                        "scored": false,
+                                        "status": "WARN",
+                                        "test_desc": "The default namespace should not be used (Manual)",
+                                        "test_number": "5.7.4"
+                                    }
+                                ],
+                                "section": "5.7",
+                                "warn": 4
+                            }
+                        ],
+                        "text": "Kubernetes Policies",
+                        "total_fail": 0,
+                        "total_info": 0,
+                        "total_pass": 0,
+                        "total_warn": 24,
+                        "version": "1.6"
+                    }
+                ],
+                "summary": {
+                    "failCount": 12,
+                    "infoCount": 0,
+                    "passCount": 70,
+                    "warnCount": 40
+                },
+                "updateTimestamp": "2021-05-02T12:44:38Z"
+            }
+        }
+    ],
+    "kind": "List",
+    "metadata": {
+        "resourceVersion": "",
+        "selfLink": ""
+    }
+}

@@ -1,0 +1,127 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  labels:
+    app: starboard-federator
+  name: starboard-federator
+spec:
+  selector:
+    matchLabels:
+      app: starboard-federator
+  template:
+    metadata:
+      labels:
+        app: starboard-federator
+    spec: 
+      volumes:
+        - name: confdir
+          emptyDir: {}
+      initContainers:
+      - name: init-starboard-federator
+        image: busybox:1.28
+        command: ["sh", "-c", "mkdir -p /app/Config && echo $SF_SESSION_KEY > /app/Config/client_session_key.aes && chmod -R 777 /app/Config/ && chmod 777 /app/Config/client_session_key.aes"]
+        envFrom:
+        - secretRef:
+            name: starboard-federator 
+        volumeMounts:
+          - name: confdir
+            mountPath: /app/Config
+      containers:
+        - image: localhost:5000/starboard-federator
+          name: starboard-federator
+          imagePullPolicy: Always
+          env:
+            - name: DATABASE_URL
+              value: postgresql://postgres:mysecretpassword@postgres:5432/postgres 
+          envFrom:
+          - secretRef:
+              name: starboard-federator 
+          volumeMounts:
+            - name: confdir
+              mountPath: /app/Config
+        - image: localhost:5000/starboard-federator
+          name: starboard-federator-jobs
+          imagePullPolicy: Always
+          command: ["/app/result/bin/RunJobs"]
+          env:
+            - name: PORT
+              value: '3000' 
+            - name: DATABASE_URL
+              value: postgresql://postgres:mysecretpassword@postgres:5432/postgres 
+          envFrom:
+          - secretRef:
+              name: starboard-federator 
+          volumeMounts:
+            - name: confdir
+              mountPath: /app/Config
+---
+apiVersion: v1
+data:
+  AES_KEY_B64: ZHlGNkpVTXFSaTFLWVU1a1VtZFZhMWh3TW5JMWRUaDRMMEUvUkNoSEswcz0=
+  SF_SESSION_KEY: oZunVvxskTFr17Mi69A2aDA4F1DFcQ4EVy1hzvVWVJ3nBc5U/n1/GT4Q1Jcjbnpd+mqDu+9UUYyy9UeoqXAyTlDwFAgLPe0Hal8+T8vEjBL9KR+Qw0gT67XTZP0Go5YK
+kind: Secret
+metadata:
+  name: starboard-federator
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: starboard-federator
+spec:
+  selector:
+    app: starboard-federator
+  ports:
+    - protocol: TCP
+      port: 8000
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: postgres 
+spec:
+  selector:
+    app: postgres 
+  ports:
+    - protocol: TCP
+      port: 5432
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  labels:
+    app: postgres
+  name: postgres
+spec:
+  selector:
+    matchLabels:
+      app: postgres
+  template:
+    metadata:
+      labels:
+        app: postgres
+    spec: 
+      containers:
+        - image: postgres:13.2-alpine
+          name: postgres
+          env:
+          - name: POSTGRES_PASSWORD
+            value: mysecretpassword
+---
+apiVersion: batch/v1beta1
+kind: CronJob
+metadata:
+  name: reports-poller
+spec:
+  schedule: "*/1 * * * *"
+  jobTemplate:
+    spec:
+      template:
+        spec:
+          restartPolicy: Never
+          containers:
+            - image: postgres:13.2-alpine
+              name: postgres
+              env:
+              - name: PGPASSWORD
+                value: mysecretpassword
+              command: ["sh", "-c", "psql -h postgres -U postgres -d postgres -c 'truncate conf_reports; insert into poll_cluster_jobs default values;'"]
