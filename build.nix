@@ -1,3 +1,4 @@
+# this is just a tweaked version of https://github.com/digitallyinduced/ihp/blob/master/NixSupport/default.nix 
 { compiler ? "ghc8103"
 , ihp
 , haskellDeps ? (p: [])

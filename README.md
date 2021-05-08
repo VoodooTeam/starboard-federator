@@ -4,9 +4,24 @@ Aggregate Starboard reports from several clusters
 ## Start dev server
 IHP relies on `nix` package manager, you must install it first : [(see IHP doc)](https://ihp.digitallyinduced.com/Guide/installation.html#1-dependency-nix-package-manager)
 
+### first run only 
+grab the IHP lib 
+```
+make -B build/ihp-lib
+```
+
+
+generate the aes key used to encrypt the websocket connections  :
+```
+openssl enc -nosalt -aes-256-cbc -out ./Config/client_session_key.aes
+```
+
+### then 
+start the dev server, database etc.
 ```
 ./start
 ```
+
 
 ## dev env
 start a target cluster (with starboard operator installed and the CR, CRB & serviceAccount for the federator)

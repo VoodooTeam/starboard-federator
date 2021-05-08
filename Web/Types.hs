@@ -31,9 +31,9 @@ data ConfReportsController
 newtype AesKey = AesKey AES256
 
 -- K8sConfReport from k8s
-newtype K8sConfReports = K8sConfReports {items :: [K8sConfReport]} deriving (Show, Generic, Eq)
-
-instance FromJSON K8sConfReports
+newtype K8sConfReports = K8sConfReports
+  {items :: [K8sConfReport]}
+  deriving (Show, Generic, Eq, FromJSON)
 
 data K8sConfReport = K8sConfReport
   { report :: ReportChecks,
@@ -42,8 +42,7 @@ data K8sConfReport = K8sConfReport
   deriving (Show, Generic, Eq, FromJSON)
 
 newtype Metadata = Metadata
-  { labels :: MetaLabels
-  }
+  {labels :: MetaLabels}
   deriving (Show, Generic, Eq, FromJSON)
 
 data MetaLabels = MetaLabels
@@ -53,6 +52,7 @@ data MetaLabels = MetaLabels
   }
   deriving (Show, Eq)
 
+-- we have define our own FromJSON instance here because of the '.' in keys
 instance FromJSON MetaLabels where
   parseJSON = withObject "MetaLabels" $ \obj -> do
     resourceKind <- obj .: "starboard.resource.kind"

@@ -15,10 +15,9 @@ tokenToDb tok = do
 tokenFromDb :: (?frameworkConfig :: FrameworkConfig) => Text -> Text
 tokenFromDb tok = do
   let (AesKey key) = getAesKey
-      b64 = decode $ encodeUtf8 tok
-  case b64 of
+  case decode $ encodeUtf8 tok  of
     Right b64' -> decodeUtf8 $ aesCompute key b64'
-    Left _ -> "magic"
+    Left _ -> ""
 
 instance Controller ClusterConnectionsController where
     action ClusterConnectionsAction = do
@@ -32,7 +31,7 @@ instance Controller ClusterConnectionsController where
     action EditClusterConnectionAction { clusterConnectionId } = do
         let ?frameworkConfig = ?context |> getFrameworkConfig
         clusterConnection' <- fetch clusterConnectionId
-        let clusterConnection = clusterConnection' {saToken = tokenFromDb $ get #saToken clusterConnection'} :: ClusterConnection
+        let clusterConnection = clusterConnection' {saToken = tokenFromDb $ get #saToken clusterConnection'}
         render EditView { .. }
 
     action UpdateClusterConnectionAction { clusterConnectionId } = do
