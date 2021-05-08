@@ -2,7 +2,7 @@ module Web.View.ClusterConnections.Index where
 
 import Web.View.Prelude
 
-data IndexView = IndexView {clusterConnections :: [ClusterConnection]}
+newtype IndexView = IndexView {clusterConnections :: [ClusterConnection]}
 
 instance View IndexView where
   html IndexView {..} =

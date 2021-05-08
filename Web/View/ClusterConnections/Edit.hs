@@ -2,7 +2,7 @@ module Web.View.ClusterConnections.Edit where
 
 import Web.View.Prelude
 
-data EditView = EditView {clusterConnection :: ClusterConnection}
+newtype EditView = EditView {clusterConnection :: ClusterConnection}
 
 instance View EditView where
   html EditView {..} =

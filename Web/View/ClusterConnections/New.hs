@@ -2,7 +2,7 @@ module Web.View.ClusterConnections.New where
 
 import Web.View.Prelude
 
-data NewView = NewView {clusterConnection :: ClusterConnection}
+newtype NewView = NewView {clusterConnection :: ClusterConnection}
 
 instance View NewView where
   html NewView {..} =
