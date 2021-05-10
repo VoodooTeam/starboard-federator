@@ -7,6 +7,7 @@ import Control.Lens hiding (get, set, (|>))
 import qualified Data.Aeson as JSON (decode, encode)
 import qualified Data.Text as T (unpack)
 import IHP.FrameworkConfig
+import IHP.RouterPrelude (mapConcurrently_)
 import qualified Network.Connection as N (TLSSettings (..))
 import qualified Network.HTTP.Client.TLS as N (mkManagerSettings)
 import qualified Network.Wreq as N
@@ -65,7 +66,7 @@ updateConfReports c =
         Nothing -> pure () -- no reports in cluster
         Just confReports -> do
           let save = saveReport (get #id c) -- we just partially apply first not to have to do the job everytime
-          mapM_ save (get #items confReports)
+          mapConcurrently_ save (get #items confReports)
   where
     noTokenFound = do
       putStrLn "no token found"
