@@ -9,15 +9,10 @@ jobs:
       docker_layer_caching: true
       resource_class: xlarge
     steps:
-      - checkout
-      - run:
-          name: build Docker image
-          command: docker build -t ${AWS_ECR_ACCOUNT_URL}/infra/starboard-federator:<< pipeline.git.revision >> .
-      - aws-ecr/ecr-login
-      - aws-ecr/push-image:
+      - aws-ecr/build-and-push-image:
+          skip-when-tags-exist: true
           repo: infra/starboard-federator
           tag: << pipeline.git.revision >>
-
 workflows:
   master:
     jobs:
