@@ -64,7 +64,7 @@ instance Controller ClusterConnectionsController where
           job
             |> set #clusterId (Just (get #id clusterConnection))
             |> create
-          clusterConnection <- clusterConnection |> createRecord
+          --clusterConnection <- clusterConnection |> createRecord
           setSuccessMessage "ClusterConnection created"
           redirectTo ClusterConnectionsAction
   --
