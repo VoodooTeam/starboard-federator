@@ -9,6 +9,7 @@ instance View EditView where
     [hsx|
         <nav>
             <ol class="breadcrumb">
+                <li class="breadcrumb-item"><a href="/">Home</a></li>
                 <li class="breadcrumb-item"><a href={ClusterConnectionsAction}>ClustersConnections</a></li>
                 <li class="breadcrumb-item active">Edit ClustersConnection</li>
             </ol>

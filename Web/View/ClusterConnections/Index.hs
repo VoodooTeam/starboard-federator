@@ -9,6 +9,7 @@ instance View IndexView where
     [hsx|
         <nav>
             <ol class="breadcrumb">
+                <li class="breadcrumb-item"><a href="/">Home</a></li>
                 <li class="breadcrumb-item active"><a href={ClusterConnectionsAction}>ClusterConnections</a></li>
             </ol>
         </nav>

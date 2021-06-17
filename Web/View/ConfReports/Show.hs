@@ -41,7 +41,7 @@ renderReport checks =
   [hsx|
   {renderSummary (get #summary checks)}
   <h4>Pod Checks</h4>
-  {renderPodChecks (get #podChecks checks)}
+    {renderPodChecks (get #podChecks checks)}
   <h4>Container Checks</h4>
   {forEach (toList (get #containerChecks checks)) renderContainerCheck }
 |]
@@ -62,7 +62,10 @@ renderSummary summ =
 
 renderPodChecks :: [ConfigCheck] -> Html
 renderPodChecks cc =
-  [hsx|
+  if null $ filterPassing cc
+    then [hsx|<div><p>all good, congratulations ! ;)</p></div>|]
+    else
+      [hsx|
         <div class="table-responsive" style="width:98%; float:right">
             <table class="table">
                 <thead>
@@ -80,7 +83,10 @@ renderPodChecks cc =
 
 renderContainerCheck :: (Text, [ConfigCheck]) -> Html
 renderContainerCheck (name, cc) =
-  [hsx|
+  if null $ filterPassing cc
+    then [hsx|<div><p>all good, congratulations ! ;)</p></div>|]
+    else
+      [hsx|
        <div>
         <p><em>{name}</em> : </p>
         <div class="table-responsive" style="width:98%; float:right">
