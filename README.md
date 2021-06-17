@@ -1,5 +1,5 @@
 # Starboard federator
-Aggregates Starboard reports from several clusters
+Aggregates [Aqua Starboard](https://blog.aquasec.com/starboard-kubernetes-tools) reports from several clusters
 
 ## Start dev server
 IHP relies on `nix` package manager, you must install it first : [(see IHP doc)](https://ihp.digitallyinduced.com/Guide/installation.html#1-dependency-nix-package-manager)
