@@ -12,7 +12,7 @@ should be enough ;)
 ## dev env
 start a target cluster (with starboard operator installed and the CR, CRB & serviceAccount for the federator)
 ```
-make startTestStack
+make start-target
 ```
 this will output the URL and serviceAccount token so you can the federator can aggregate results
 

@@ -21,14 +21,19 @@ JS_FILES += ${IHP}/static/vendor/turbolinksMorphdom.js
 
 include ${IHP}/Makefile.dist
 
+.PHONY : local-env add-cluster-sa start-target-cluster start-infra-cluster build-db-migrate buid-deploy-local 
 
 local-env: start-infra-cluster build-db-migrate build-deploy-local start-target-cluster
 
-start-target-cluster:
-	./scripts/startTestStack.sh
+add-cluster-sa:
 	kubectl apply -f ./scripts/create-sa.yml
 	echo "==="
 	./scripts/get-cluster-info.sh
+
+start-test-cluster: 
+	./scripts/startTestStack.sh
+
+start-target: start-test-cluster add-cluster-sa
 
 start-infra-cluster:
 	./scripts/startInfraStack.sh

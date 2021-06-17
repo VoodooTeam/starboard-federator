@@ -12,26 +12,3 @@ SET client_min_messages = warning;
 SET row_security = off;
 
 
-SET SESSION AUTHORIZATION DEFAULT;
-
-ALTER TABLE public.cluster_connections DISABLE TRIGGER ALL;
-
-
-
-ALTER TABLE public.cluster_connections ENABLE TRIGGER ALL;
-
-
-ALTER TABLE public.conf_reports DISABLE TRIGGER ALL;
-
-
-
-ALTER TABLE public.conf_reports ENABLE TRIGGER ALL;
-
-
-ALTER TABLE public.poll_cluster_jobs DISABLE TRIGGER ALL;
-
-
-
-ALTER TABLE public.poll_cluster_jobs ENABLE TRIGGER ALL;
-
-
