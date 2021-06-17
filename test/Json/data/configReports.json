@@ -1,0 +1,2116 @@
+{
+  "apiVersion": "v1",
+  "items": [
+    {
+      "apiVersion": "aquasecurity.github.io/v1alpha1",
+      "kind": "ConfigAuditReport",
+      "metadata": {
+        "creationTimestamp": "2021-05-02T12:44:20Z",
+        "generation": 1,
+        "labels": {
+          "plugin-config-hash": "5b7d495c54",
+          "pod-spec-hash": "6555c474c9",
+          "starboard.resource.kind": "DaemonSet",
+          "starboard.resource.name": "kindnet",
+          "starboard.resource.namespace": "kube-system"
+        },
+        "managedFields": [
+          {
+            "apiVersion": "aquasecurity.github.io/v1alpha1",
+            "fieldsType": "FieldsV1",
+            "fieldsV1": {
+              "f:metadata": {
+                "f:labels": {
+                  ".": {},
+                  "f:plugin-config-hash": {},
+                  "f:pod-spec-hash": {},
+                  "f:starboard.resource.kind": {},
+                  "f:starboard.resource.name": {},
+                  "f:starboard.resource.namespace": {}
+                },
+                "f:ownerReferences": {
+                  ".": {},
+                  "k:{\"uid\":\"44bf8fbd-9a88-4ec7-9e51-50ae7d01c501\"}": {
+                    ".": {},
+                    "f:apiVersion": {},
+                    "f:blockOwnerDeletion": {},
+                    "f:controller": {},
+                    "f:kind": {},
+                    "f:name": {},
+                    "f:uid": {}
+                  }
+                }
+              },
+              "f:report": {
+                ".": {},
+                "f:containerChecks": {
+                  ".": {},
+                  "f:kindnet-cni": {}
+                },
+                "f:podChecks": {},
+                "f:scanner": {
+                  ".": {},
+                  "f:name": {},
+                  "f:vendor": {},
+                  "f:version": {}
+                },
+                "f:summary": {
+                  ".": {},
+                  "f:dangerCount": {},
+                  "f:passCount": {},
+                  "f:warningCount": {}
+                },
+                "f:updateTimestamp": {}
+              }
+            },
+            "manager": "starboard-operator",
+            "operation": "Update",
+            "time": "2021-05-02T12:44:20Z"
+          }
+        ],
+        "name": "daemonset-kindnet",
+        "namespace": "kube-system",
+        "ownerReferences": [
+          {
+            "apiVersion": "apps/v1",
+            "blockOwnerDeletion": false,
+            "controller": true,
+            "kind": "DaemonSet",
+            "name": "kindnet",
+            "uid": "44bf8fbd-9a88-4ec7-9e51-50ae7d01c501"
+          }
+        ],
+        "resourceVersion": "1025",
+        "selfLink": "/apis/aquasecurity.github.io/v1alpha1/namespaces/kube-system/configauditreports/daemonset-kindnet",
+        "uid": "02b76c28-1849-4126-ab1c-33680ee1aad7"
+      },
+      "report": {
+        "containerChecks": {
+          "kindnet-cni": [
+            {
+              "category": "Efficiency",
+              "checkID": "memoryLimitsMissing",
+              "message": "Memory limits are set",
+              "severity": "warning",
+              "success": true
+            },
+            {
+              "category": "Security",
+              "checkID": "notReadOnlyRootFilesystem",
+              "message": "Filesystem should be read only",
+              "severity": "warning",
+              "success": false
+            },
+            {
+              "category": "Reliability",
+              "checkID": "tagNotSpecified",
+              "message": "Image tag is specified",
+              "severity": "danger",
+              "success": true
+            },
+            {
+              "category": "Efficiency",
+              "checkID": "cpuLimitsMissing",
+              "message": "CPU limits are set",
+              "severity": "warning",
+              "success": true
+            },
+            {
+              "category": "Efficiency",
+              "checkID": "cpuRequestsMissing",
+              "message": "CPU requests are set",
+              "severity": "warning",
+              "success": true
+            },
+            {
+              "category": "Security",
+              "checkID": "hostPortSet",
+              "message": "Host port is not configured",
+              "severity": "warning",
+              "success": true
+            },
+            {
+              "category": "Reliability",
+              "checkID": "livenessProbeMissing",
+              "message": "Liveness probe should be configured",
+              "severity": "warning",
+              "success": false
+            },
+            {
+              "category": "Efficiency",
+              "checkID": "memoryRequestsMissing",
+              "message": "Memory requests are set",
+              "severity": "warning",
+              "success": true
+            },
+            {
+              "category": "Security",
+              "checkID": "privilegeEscalationAllowed",
+              "message": "Privilege escalation should not be allowed",
+              "severity": "danger",
+              "success": false
+            },
+            {
+              "category": "Reliability",
+              "checkID": "readinessProbeMissing",
+              "message": "Readiness probe should be configured",
+              "severity": "warning",
+              "success": false
+            },
+            {
+              "category": "Security",
+              "checkID": "dangerousCapabilities",
+              "message": "Container should not have dangerous capabilities",
+              "severity": "danger",
+              "success": false
+            },
+            {
+              "category": "Security",
+              "checkID": "insecureCapabilities",
+              "message": "Container should not have insecure capabilities",
+              "severity": "warning",
+              "success": false
+            },
+            {
+              "category": "Security",
+              "checkID": "runAsPrivileged",
+              "message": "Not running as privileged",
+              "severity": "danger",
+              "success": true
+            },
+            {
+              "category": "Security",
+              "checkID": "runAsRootAllowed",
+              "message": "Should not be allowed to run as root",
+              "severity": "warning",
+              "success": false
+            }
+          ]
+        },
+        "podChecks": [
+          {
+            "category": "Security",
+            "checkID": "hostIPCSet",
+            "message": "Host IPC is not configured",
+            "severity": "danger",
+            "success": true
+          },
+          {
+            "category": "Security",
+            "checkID": "hostNetworkSet",
+            "message": "Host network should not be configured",
+            "severity": "warning",
+            "success": false
+          },
+          {
+            "category": "Security",
+            "checkID": "hostPIDSet",
+            "message": "Host PID is not configured",
+            "severity": "danger",
+            "success": true
+          }
+        ],
+        "scanner": {
+          "name": "Polaris",
+          "vendor": "Fairwinds Ops",
+          "version": "3.2"
+        },
+        "summary": {
+          "dangerCount": 2,
+          "passCount": 9,
+          "warningCount": 6
+        },
+        "updateTimestamp": "2021-05-02T12:44:20Z"
+      }
+    },
+    {
+      "apiVersion": "aquasecurity.github.io/v1alpha1",
+      "kind": "ConfigAuditReport",
+      "metadata": {
+        "creationTimestamp": "2021-05-02T12:44:17Z",
+        "generation": 1,
+        "labels": {
+          "plugin-config-hash": "5b7d495c54",
+          "pod-spec-hash": "79f65bb9b5",
+          "starboard.resource.kind": "DaemonSet",
+          "starboard.resource.name": "kube-proxy",
+          "starboard.resource.namespace": "kube-system"
+        },
+        "managedFields": [
+          {
+            "apiVersion": "aquasecurity.github.io/v1alpha1",
+            "fieldsType": "FieldsV1",
+            "fieldsV1": {
+              "f:metadata": {
+                "f:labels": {
+                  ".": {},
+                  "f:plugin-config-hash": {},
+                  "f:pod-spec-hash": {},
+                  "f:starboard.resource.kind": {},
+                  "f:starboard.resource.name": {},
+                  "f:starboard.resource.namespace": {}
+                },
+                "f:ownerReferences": {
+                  ".": {},
+                  "k:{\"uid\":\"e9a27ad7-76b2-41f1-bb4f-dcc848348ca2\"}": {
+                    ".": {},
+                    "f:apiVersion": {},
+                    "f:blockOwnerDeletion": {},
+                    "f:controller": {},
+                    "f:kind": {},
+                    "f:name": {},
+                    "f:uid": {}
+                  }
+                }
+              },
+              "f:report": {
+                ".": {},
+                "f:containerChecks": {
+                  ".": {},
+                  "f:kube-proxy": {}
+                },
+                "f:podChecks": {},
+                "f:scanner": {
+                  ".": {},
+                  "f:name": {},
+                  "f:vendor": {},
+                  "f:version": {}
+                },
+                "f:summary": {
+                  ".": {},
+                  "f:dangerCount": {},
+                  "f:passCount": {},
+                  "f:warningCount": {}
+                },
+                "f:updateTimestamp": {}
+              }
+            },
+            "manager": "starboard-operator",
+            "operation": "Update",
+            "time": "2021-05-02T12:44:17Z"
+          }
+        ],
+        "name": "daemonset-kube-proxy",
+        "namespace": "kube-system",
+        "ownerReferences": [
+          {
+            "apiVersion": "apps/v1",
+            "blockOwnerDeletion": false,
+            "controller": true,
+            "kind": "DaemonSet",
+            "name": "kube-proxy",
+            "uid": "e9a27ad7-76b2-41f1-bb4f-dcc848348ca2"
+          }
+        ],
+        "resourceVersion": "980",
+        "selfLink": "/apis/aquasecurity.github.io/v1alpha1/namespaces/kube-system/configauditreports/daemonset-kube-proxy",
+        "uid": "7ac347ea-8433-4148-872e-bff43c1ea825"
+      },
+      "report": {
+        "containerChecks": {
+          "kube-proxy": [
+            {
+              "category": "Security",
+              "checkID": "privilegeEscalationAllowed",
+              "message": "Privilege escalation should not be allowed",
+              "severity": "danger",
+              "success": false
+            },
+            {
+              "category": "Reliability",
+              "checkID": "tagNotSpecified",
+              "message": "Image tag is specified",
+              "severity": "danger",
+              "success": true
+            },
+            {
+              "category": "Security",
+              "checkID": "dangerousCapabilities",
+              "message": "Container does not have any dangerous capabilities",
+              "severity": "danger",
+              "success": true
+            },
+            {
+              "category": "Security",
+              "checkID": "insecureCapabilities",
+              "message": "Container should not have insecure capabilities",
+              "severity": "warning",
+              "success": false
+            }
+          ]
+        },
+        "podChecks": [
+          {
+            "category": "Security",
+            "checkID": "hostIPCSet",
+            "message": "Host IPC is not configured",
+            "severity": "danger",
+            "success": true
+          }
+        ],
+        "scanner": {
+          "name": "Polaris",
+          "vendor": "Fairwinds Ops",
+          "version": "3.2"
+        },
+        "summary": {
+          "dangerCount": 1,
+          "passCount": 3,
+          "warningCount": 1
+        },
+        "updateTimestamp": "2021-05-02T12:44:17Z"
+      }
+    },
+    {
+      "apiVersion": "aquasecurity.github.io/v1alpha1",
+      "kind": "ConfigAuditReport",
+      "metadata": {
+        "creationTimestamp": "2021-05-02T12:44:13Z",
+        "generation": 1,
+        "labels": {
+          "plugin-config-hash": "5b7d495c54",
+          "pod-spec-hash": "d4b9bb874",
+          "starboard.resource.kind": "Pod",
+          "starboard.resource.name": "etcd-starboard-control-plane",
+          "starboard.resource.namespace": "kube-system"
+        },
+        "managedFields": [
+          {
+            "apiVersion": "aquasecurity.github.io/v1alpha1",
+            "fieldsType": "FieldsV1",
+            "fieldsV1": {
+              "f:metadata": {
+                "f:labels": {
+                  ".": {},
+                  "f:plugin-config-hash": {},
+                  "f:pod-spec-hash": {},
+                  "f:starboard.resource.kind": {},
+                  "f:starboard.resource.name": {},
+                  "f:starboard.resource.namespace": {}
+                },
+                "f:ownerReferences": {
+                  ".": {},
+                  "k:{\"uid\":\"23ffc09f-8412-4070-b244-0fd663205210\"}": {
+                    ".": {},
+                    "f:apiVersion": {},
+                    "f:blockOwnerDeletion": {},
+                    "f:controller": {},
+                    "f:kind": {},
+                    "f:name": {},
+                    "f:uid": {}
+                  }
+                }
+              },
+              "f:report": {
+                ".": {},
+                "f:containerChecks": {
+                  ".": {},
+                  "f:etcd": {}
+                },
+                "f:podChecks": {},
+                "f:scanner": {
+                  ".": {},
+                  "f:name": {},
+                  "f:vendor": {},
+                  "f:version": {}
+                },
+                "f:summary": {
+                  ".": {},
+                  "f:dangerCount": {},
+                  "f:passCount": {},
+                  "f:warningCount": {}
+                },
+                "f:updateTimestamp": {}
+              }
+            },
+            "manager": "starboard-operator",
+            "operation": "Update",
+            "time": "2021-05-02T12:44:13Z"
+          }
+        ],
+        "name": "pod-etcd-starboard-control-plane",
+        "namespace": "kube-system",
+        "ownerReferences": [
+          {
+            "apiVersion": "v1",
+            "blockOwnerDeletion": false,
+            "controller": true,
+            "kind": "Pod",
+            "name": "etcd-starboard-control-plane",
+            "uid": "23ffc09f-8412-4070-b244-0fd663205210"
+          }
+        ],
+        "resourceVersion": "918",
+        "selfLink": "/apis/aquasecurity.github.io/v1alpha1/namespaces/kube-system/configauditreports/pod-etcd-starboard-control-plane",
+        "uid": "2aa591bd-8855-45d2-94b7-7f209a773dc3"
+      },
+      "report": {
+        "containerChecks": {
+          "etcd": [
+            {
+              "category": "Efficiency",
+              "checkID": "cpuLimitsMissing",
+              "message": "CPU limits should be set",
+              "severity": "warning",
+              "success": false
+            },
+            {
+              "category": "Security",
+              "checkID": "privilegeEscalationAllowed",
+              "message": "Privilege escalation should not be allowed",
+              "severity": "danger",
+              "success": false
+            },
+            {
+              "category": "Security",
+              "checkID": "runAsRootAllowed",
+              "message": "Should not be allowed to run as root",
+              "severity": "warning",
+              "success": false
+            },
+            {
+              "category": "Efficiency",
+              "checkID": "cpuRequestsMissing",
+              "message": "CPU requests should be set",
+              "severity": "warning",
+              "success": false
+            },
+            {
+              "category": "Efficiency",
+              "checkID": "memoryRequestsMissing",
+              "message": "Memory requests should be set",
+              "severity": "warning",
+              "success": false
+            },
+            {
+              "category": "Security",
+              "checkID": "notReadOnlyRootFilesystem",
+              "message": "Filesystem should be read only",
+              "severity": "warning",
+              "success": false
+            },
+            {
+              "category": "Efficiency",
+              "checkID": "memoryLimitsMissing",
+              "message": "Memory limits should be set",
+              "severity": "warning",
+              "success": false
+            },
+            {
+              "category": "Security",
+              "checkID": "runAsPrivileged",
+              "message": "Not running as privileged",
+              "severity": "danger",
+              "success": true
+            },
+            {
+              "category": "Reliability",
+              "checkID": "tagNotSpecified",
+              "message": "Image tag is specified",
+              "severity": "danger",
+              "success": true
+            },
+            {
+              "category": "Security",
+              "checkID": "dangerousCapabilities",
+              "message": "Container does not have any dangerous capabilities",
+              "severity": "danger",
+              "success": true
+            },
+            {
+              "category": "Security",
+              "checkID": "hostPortSet",
+              "message": "Host port is not configured",
+              "severity": "warning",
+              "success": true
+            },
+            {
+              "category": "Security",
+              "checkID": "insecureCapabilities",
+              "message": "Container should not have insecure capabilities",
+              "severity": "warning",
+              "success": false
+            },
+            {
+              "category": "Reliability",
+              "checkID": "livenessProbeMissing",
+              "message": "Liveness probe is configured",
+              "severity": "warning",
+              "success": true
+            },
+            {
+              "category": "Reliability",
+              "checkID": "readinessProbeMissing",
+              "message": "Readiness probe should be configured",
+              "severity": "warning",
+              "success": false
+            }
+          ]
+        },
+        "podChecks": [
+          {
+            "category": "Security",
+            "checkID": "hostIPCSet",
+            "message": "Host IPC is not configured",
+            "severity": "danger",
+            "success": true
+          },
+          {
+            "category": "Security",
+            "checkID": "hostNetworkSet",
+            "message": "Host network should not be configured",
+            "severity": "warning",
+            "success": false
+          },
+          {
+            "category": "Security",
+            "checkID": "hostPIDSet",
+            "message": "Host PID is not configured",
+            "severity": "danger",
+            "success": true
+          }
+        ],
+        "scanner": {
+          "name": "Polaris",
+          "vendor": "Fairwinds Ops",
+          "version": "3.2"
+        },
+        "summary": {
+          "dangerCount": 1,
+          "passCount": 7,
+          "warningCount": 9
+        },
+        "updateTimestamp": "2021-05-02T12:44:13Z"
+      }
+    },
+    {
+      "apiVersion": "aquasecurity.github.io/v1alpha1",
+      "kind": "ConfigAuditReport",
+      "metadata": {
+        "creationTimestamp": "2021-05-02T12:44:12Z",
+        "generation": 1,
+        "labels": {
+          "plugin-config-hash": "5b7d495c54",
+          "pod-spec-hash": "6dd5b7b874",
+          "starboard.resource.kind": "Pod",
+          "starboard.resource.name": "kube-apiserver-starboard-control-plane",
+          "starboard.resource.namespace": "kube-system"
+        },
+        "managedFields": [
+          {
+            "apiVersion": "aquasecurity.github.io/v1alpha1",
+            "fieldsType": "FieldsV1",
+            "fieldsV1": {
+              "f:metadata": {
+                "f:labels": {
+                  ".": {},
+                  "f:plugin-config-hash": {},
+                  "f:pod-spec-hash": {},
+                  "f:starboard.resource.kind": {},
+                  "f:starboard.resource.name": {},
+                  "f:starboard.resource.namespace": {}
+                },
+                "f:ownerReferences": {
+                  ".": {},
+                  "k:{\"uid\":\"a1487454-4986-4d37-b902-3064c5f24ff1\"}": {
+                    ".": {},
+                    "f:apiVersion": {},
+                    "f:blockOwnerDeletion": {},
+                    "f:controller": {},
+                    "f:kind": {},
+                    "f:name": {},
+                    "f:uid": {}
+                  }
+                }
+              },
+              "f:report": {
+                ".": {},
+                "f:containerChecks": {
+                  ".": {},
+                  "f:kube-apiserver": {}
+                },
+                "f:podChecks": {},
+                "f:scanner": {
+                  ".": {},
+                  "f:name": {},
+                  "f:vendor": {},
+                  "f:version": {}
+                },
+                "f:summary": {
+                  ".": {},
+                  "f:dangerCount": {},
+                  "f:passCount": {},
+                  "f:warningCount": {}
+                },
+                "f:updateTimestamp": {}
+              }
+            },
+            "manager": "starboard-operator",
+            "operation": "Update",
+            "time": "2021-05-02T12:44:12Z"
+          }
+        ],
+        "name": "pod-kube-apiserver-starboard-control-plane",
+        "namespace": "kube-system",
+        "ownerReferences": [
+          {
+            "apiVersion": "v1",
+            "blockOwnerDeletion": false,
+            "controller": true,
+            "kind": "Pod",
+            "name": "kube-apiserver-starboard-control-plane",
+            "uid": "a1487454-4986-4d37-b902-3064c5f24ff1"
+          }
+        ],
+        "resourceVersion": "904",
+        "selfLink": "/apis/aquasecurity.github.io/v1alpha1/namespaces/kube-system/configauditreports/pod-kube-apiserver-starboard-control-plane",
+        "uid": "5513c382-ea88-417c-bedb-b62792411531"
+      },
+      "report": {
+        "containerChecks": {
+          "kube-apiserver": [
+            {
+              "category": "Security",
+              "checkID": "dangerousCapabilities",
+              "message": "Container does not have any dangerous capabilities",
+              "severity": "danger",
+              "success": true
+            },
+            {
+              "category": "Security",
+              "checkID": "insecureCapabilities",
+              "message": "Container should not have insecure capabilities",
+              "severity": "warning",
+              "success": false
+            },
+            {
+              "category": "Security",
+              "checkID": "privilegeEscalationAllowed",
+              "message": "Privilege escalation should not be allowed",
+              "severity": "danger",
+              "success": false
+            },
+            {
+              "category": "Reliability",
+              "checkID": "tagNotSpecified",
+              "message": "Image tag is specified",
+              "severity": "danger",
+              "success": true
+            }
+          ]
+        },
+        "podChecks": [
+          {
+            "category": "Security",
+            "checkID": "hostIPCSet",
+            "message": "Host IPC is not configured",
+            "severity": "danger",
+            "success": true
+          }
+        ],
+        "scanner": {
+          "name": "Polaris",
+          "vendor": "Fairwinds Ops",
+          "version": "3.2"
+        },
+        "summary": {
+          "dangerCount": 1,
+          "passCount": 3,
+          "warningCount": 1
+        },
+        "updateTimestamp": "2021-05-02T12:44:12Z"
+      }
+    },
+    {
+      "apiVersion": "aquasecurity.github.io/v1alpha1",
+      "kind": "ConfigAuditReport",
+      "metadata": {
+        "creationTimestamp": "2021-05-02T12:44:16Z",
+        "generation": 1,
+        "labels": {
+          "plugin-config-hash": "5b7d495c54",
+          "pod-spec-hash": "7ffb75c9c9",
+          "starboard.resource.kind": "Pod",
+          "starboard.resource.name": "kube-controller-manager-starboard-control-plane",
+          "starboard.resource.namespace": "kube-system"
+        },
+        "managedFields": [
+          {
+            "apiVersion": "aquasecurity.github.io/v1alpha1",
+            "fieldsType": "FieldsV1",
+            "fieldsV1": {
+              "f:metadata": {
+                "f:labels": {
+                  ".": {},
+                  "f:plugin-config-hash": {},
+                  "f:pod-spec-hash": {},
+                  "f:starboard.resource.kind": {},
+                  "f:starboard.resource.name": {},
+                  "f:starboard.resource.namespace": {}
+                },
+                "f:ownerReferences": {
+                  ".": {},
+                  "k:{\"uid\":\"2db4fce9-7449-44fa-9ded-5f90b6c744ff\"}": {
+                    ".": {},
+                    "f:apiVersion": {},
+                    "f:blockOwnerDeletion": {},
+                    "f:controller": {},
+                    "f:kind": {},
+                    "f:name": {},
+                    "f:uid": {}
+                  }
+                }
+              },
+              "f:report": {
+                ".": {},
+                "f:containerChecks": {
+                  ".": {},
+                  "f:kube-controller-manager": {}
+                },
+                "f:podChecks": {},
+                "f:scanner": {
+                  ".": {},
+                  "f:name": {},
+                  "f:vendor": {},
+                  "f:version": {}
+                },
+                "f:summary": {
+                  ".": {},
+                  "f:dangerCount": {},
+                  "f:passCount": {},
+                  "f:warningCount": {}
+                },
+                "f:updateTimestamp": {}
+              }
+            },
+            "manager": "starboard-operator",
+            "operation": "Update",
+            "time": "2021-05-02T12:44:16Z"
+          }
+        ],
+        "name": "pod-kube-controller-manager-starboard-control-plane",
+        "namespace": "kube-system",
+        "ownerReferences": [
+          {
+            "apiVersion": "v1",
+            "blockOwnerDeletion": false,
+            "controller": true,
+            "kind": "Pod",
+            "name": "kube-controller-manager-starboard-control-plane",
+            "uid": "2db4fce9-7449-44fa-9ded-5f90b6c744ff"
+          }
+        ],
+        "resourceVersion": "961",
+        "selfLink": "/apis/aquasecurity.github.io/v1alpha1/namespaces/kube-system/configauditreports/pod-kube-controller-manager-starboard-control-plane",
+        "uid": "3b407d7b-1152-418c-aee3-67fa94107e71"
+      },
+      "report": {
+        "containerChecks": {
+          "kube-controller-manager": [
+            {
+              "category": "Security",
+              "checkID": "dangerousCapabilities",
+              "message": "Container does not have any dangerous capabilities",
+              "severity": "danger",
+              "success": true
+            },
+            {
+              "category": "Security",
+              "checkID": "insecureCapabilities",
+              "message": "Container should not have insecure capabilities",
+              "severity": "warning",
+              "success": false
+            },
+            {
+              "category": "Security",
+              "checkID": "privilegeEscalationAllowed",
+              "message": "Privilege escalation should not be allowed",
+              "severity": "danger",
+              "success": false
+            },
+            {
+              "category": "Reliability",
+              "checkID": "tagNotSpecified",
+              "message": "Image tag is specified",
+              "severity": "danger",
+              "success": true
+            }
+          ]
+        },
+        "podChecks": [
+          {
+            "category": "Security",
+            "checkID": "hostIPCSet",
+            "message": "Host IPC is not configured",
+            "severity": "danger",
+            "success": true
+          }
+        ],
+        "scanner": {
+          "name": "Polaris",
+          "vendor": "Fairwinds Ops",
+          "version": "3.2"
+        },
+        "summary": {
+          "dangerCount": 1,
+          "passCount": 3,
+          "warningCount": 1
+        },
+        "updateTimestamp": "2021-05-02T12:44:16Z"
+      }
+    },
+    {
+      "apiVersion": "aquasecurity.github.io/v1alpha1",
+      "kind": "ConfigAuditReport",
+      "metadata": {
+        "creationTimestamp": "2021-05-02T12:44:18Z",
+        "generation": 1,
+        "labels": {
+          "plugin-config-hash": "5b7d495c54",
+          "pod-spec-hash": "5d7cbcb4c9",
+          "starboard.resource.kind": "Pod",
+          "starboard.resource.name": "kube-scheduler-starboard-control-plane",
+          "starboard.resource.namespace": "kube-system"
+        },
+        "managedFields": [
+          {
+            "apiVersion": "aquasecurity.github.io/v1alpha1",
+            "fieldsType": "FieldsV1",
+            "fieldsV1": {
+              "f:metadata": {
+                "f:labels": {
+                  ".": {},
+                  "f:plugin-config-hash": {},
+                  "f:pod-spec-hash": {},
+                  "f:starboard.resource.kind": {},
+                  "f:starboard.resource.name": {},
+                  "f:starboard.resource.namespace": {}
+                },
+                "f:ownerReferences": {
+                  ".": {},
+                  "k:{\"uid\":\"aed15f93-c391-4984-89ac-7ce7665e4154\"}": {
+                    ".": {},
+                    "f:apiVersion": {},
+                    "f:blockOwnerDeletion": {},
+                    "f:controller": {},
+                    "f:kind": {},
+                    "f:name": {},
+                    "f:uid": {}
+                  }
+                }
+              },
+              "f:report": {
+                ".": {},
+                "f:containerChecks": {
+                  ".": {},
+                  "f:kube-scheduler": {}
+                },
+                "f:podChecks": {},
+                "f:scanner": {
+                  ".": {},
+                  "f:name": {},
+                  "f:vendor": {},
+                  "f:version": {}
+                },
+                "f:summary": {
+                  ".": {},
+                  "f:dangerCount": {},
+                  "f:passCount": {},
+                  "f:warningCount": {}
+                },
+                "f:updateTimestamp": {}
+              }
+            },
+            "manager": "starboard-operator",
+            "operation": "Update",
+            "time": "2021-05-02T12:44:18Z"
+          }
+        ],
+        "name": "pod-kube-scheduler-starboard-control-plane",
+        "namespace": "kube-system",
+        "ownerReferences": [
+          {
+            "apiVersion": "v1",
+            "blockOwnerDeletion": false,
+            "controller": true,
+            "kind": "Pod",
+            "name": "kube-scheduler-starboard-control-plane",
+            "uid": "aed15f93-c391-4984-89ac-7ce7665e4154"
+          }
+        ],
+        "resourceVersion": "998",
+        "selfLink": "/apis/aquasecurity.github.io/v1alpha1/namespaces/kube-system/configauditreports/pod-kube-scheduler-starboard-control-plane",
+        "uid": "c701154f-d427-4399-9f45-db490c4437bd"
+      },
+      "report": {
+        "containerChecks": {
+          "kube-scheduler": [
+            {
+              "category": "Reliability",
+              "checkID": "tagNotSpecified",
+              "message": "Image tag is specified",
+              "severity": "danger",
+              "success": true
+            },
+            {
+              "category": "Security",
+              "checkID": "dangerousCapabilities",
+              "message": "Container does not have any dangerous capabilities",
+              "severity": "danger",
+              "success": true
+            },
+            {
+              "category": "Security",
+              "checkID": "insecureCapabilities",
+              "message": "Container should not have insecure capabilities",
+              "severity": "warning",
+              "success": false
+            },
+            {
+              "category": "Security",
+              "checkID": "privilegeEscalationAllowed",
+              "message": "Privilege escalation should not be allowed",
+              "severity": "danger",
+              "success": false
+            }
+          ]
+        },
+        "podChecks": [
+          {
+            "category": "Security",
+            "checkID": "hostIPCSet",
+            "message": "Host IPC is not configured",
+            "severity": "danger",
+            "success": true
+          }
+        ],
+        "scanner": {
+          "name": "Polaris",
+          "vendor": "Fairwinds Ops",
+          "version": "3.2"
+        },
+        "summary": {
+          "dangerCount": 1,
+          "passCount": 3,
+          "warningCount": 1
+        },
+        "updateTimestamp": "2021-05-02T12:44:18Z"
+      }
+    },
+    {
+      "apiVersion": "aquasecurity.github.io/v1alpha1",
+      "kind": "ConfigAuditReport",
+      "metadata": {
+        "creationTimestamp": "2021-05-02T12:44:33Z",
+        "generation": 1,
+        "labels": {
+          "plugin-config-hash": "5b7d495c54",
+          "pod-spec-hash": "5456d99dd5",
+          "starboard.resource.kind": "ReplicaSet",
+          "starboard.resource.name": "coredns-f9fd979d6",
+          "starboard.resource.namespace": "kube-system"
+        },
+        "managedFields": [
+          {
+            "apiVersion": "aquasecurity.github.io/v1alpha1",
+            "fieldsType": "FieldsV1",
+            "fieldsV1": {
+              "f:metadata": {
+                "f:labels": {
+                  ".": {},
+                  "f:plugin-config-hash": {},
+                  "f:pod-spec-hash": {},
+                  "f:starboard.resource.kind": {},
+                  "f:starboard.resource.name": {},
+                  "f:starboard.resource.namespace": {}
+                },
+                "f:ownerReferences": {
+                  ".": {},
+                  "k:{\"uid\":\"8d1b9576-422d-4666-9034-00a506cad187\"}": {
+                    ".": {},
+                    "f:apiVersion": {},
+                    "f:blockOwnerDeletion": {},
+                    "f:controller": {},
+                    "f:kind": {},
+                    "f:name": {},
+                    "f:uid": {}
+                  }
+                }
+              },
+              "f:report": {
+                ".": {},
+                "f:containerChecks": {
+                  ".": {},
+                  "f:coredns": {}
+                },
+                "f:podChecks": {},
+                "f:scanner": {
+                  ".": {},
+                  "f:name": {},
+                  "f:vendor": {},
+                  "f:version": {}
+                },
+                "f:summary": {
+                  ".": {},
+                  "f:dangerCount": {},
+                  "f:passCount": {},
+                  "f:warningCount": {}
+                },
+                "f:updateTimestamp": {}
+              }
+            },
+            "manager": "starboard-operator",
+            "operation": "Update",
+            "time": "2021-05-02T12:44:33Z"
+          }
+        ],
+        "name": "replicaset-coredns-f9fd979d6",
+        "namespace": "kube-system",
+        "ownerReferences": [
+          {
+            "apiVersion": "apps/v1",
+            "blockOwnerDeletion": false,
+            "controller": true,
+            "kind": "ReplicaSet",
+            "name": "coredns-f9fd979d6",
+            "uid": "8d1b9576-422d-4666-9034-00a506cad187"
+          }
+        ],
+        "resourceVersion": "1203",
+        "selfLink": "/apis/aquasecurity.github.io/v1alpha1/namespaces/kube-system/configauditreports/replicaset-coredns-f9fd979d6",
+        "uid": "b94e6c48-ed23-47a6-a03d-20ee79b790e7"
+      },
+      "report": {
+        "containerChecks": {
+          "coredns": [
+            {
+              "category": "Efficiency",
+              "checkID": "cpuRequestsMissing",
+              "message": "CPU requests are set",
+              "severity": "warning",
+              "success": true
+            },
+            {
+              "category": "Security",
+              "checkID": "hostPortSet",
+              "message": "Host port is not configured",
+              "severity": "warning",
+              "success": true
+            },
+            {
+              "category": "Efficiency",
+              "checkID": "memoryLimitsMissing",
+              "message": "Memory limits are set",
+              "severity": "warning",
+              "success": true
+            },
+            {
+              "category": "Security",
+              "checkID": "privilegeEscalationAllowed",
+              "message": "Privilege escalation not allowed",
+              "severity": "danger",
+              "success": true
+            },
+            {
+              "category": "Efficiency",
+              "checkID": "cpuLimitsMissing",
+              "message": "CPU limits should be set",
+              "severity": "warning",
+              "success": false
+            },
+            {
+              "category": "Reliability",
+              "checkID": "livenessProbeMissing",
+              "message": "Liveness probe is configured",
+              "severity": "warning",
+              "success": true
+            },
+            {
+              "category": "Efficiency",
+              "checkID": "memoryRequestsMissing",
+              "message": "Memory requests are set",
+              "severity": "warning",
+              "success": true
+            },
+            {
+              "category": "Reliability",
+              "checkID": "readinessProbeMissing",
+              "message": "Readiness probe is configured",
+              "severity": "warning",
+              "success": true
+            },
+            {
+              "category": "Security",
+              "checkID": "runAsPrivileged",
+              "message": "Not running as privileged",
+              "severity": "danger",
+              "success": true
+            },
+            {
+              "category": "Reliability",
+              "checkID": "tagNotSpecified",
+              "message": "Image tag is specified",
+              "severity": "danger",
+              "success": true
+            },
+            {
+              "category": "Security",
+              "checkID": "dangerousCapabilities",
+              "message": "Container does not have any dangerous capabilities",
+              "severity": "danger",
+              "success": true
+            },
+            {
+              "category": "Security",
+              "checkID": "insecureCapabilities",
+              "message": "Container should not have insecure capabilities",
+              "severity": "warning",
+              "success": false
+            },
+            {
+              "category": "Security",
+              "checkID": "notReadOnlyRootFilesystem",
+              "message": "Filesystem is read only",
+              "severity": "warning",
+              "success": true
+            },
+            {
+              "category": "Security",
+              "checkID": "runAsRootAllowed",
+              "message": "Should not be allowed to run as root",
+              "severity": "warning",
+              "success": false
+            }
+          ]
+        },
+        "podChecks": [
+          {
+            "category": "Security",
+            "checkID": "hostIPCSet",
+            "message": "Host IPC is not configured",
+            "severity": "danger",
+            "success": true
+          },
+          {
+            "category": "Security",
+            "checkID": "hostNetworkSet",
+            "message": "Host network is not configured",
+            "severity": "warning",
+            "success": true
+          },
+          {
+            "category": "Security",
+            "checkID": "hostPIDSet",
+            "message": "Host PID is not configured",
+            "severity": "danger",
+            "success": true
+          }
+        ],
+        "scanner": {
+          "name": "Polaris",
+          "vendor": "Fairwinds Ops",
+          "version": "3.2"
+        },
+        "summary": {
+          "dangerCount": 0,
+          "passCount": 14,
+          "warningCount": 3
+        },
+        "updateTimestamp": "2021-05-02T12:44:33Z"
+      }
+    },
+    {
+      "apiVersion": "aquasecurity.github.io/v1alpha1",
+      "kind": "ConfigAuditReport",
+      "metadata": {
+        "creationTimestamp": "2021-05-02T12:44:15Z",
+        "generation": 1,
+        "labels": {
+          "plugin-config-hash": "5b7d495c54",
+          "pod-spec-hash": "78b59ff9",
+          "starboard.resource.kind": "ReplicaSet",
+          "starboard.resource.name": "local-path-provisioner-78776bfc44",
+          "starboard.resource.namespace": "local-path-storage"
+        },
+        "managedFields": [
+          {
+            "apiVersion": "aquasecurity.github.io/v1alpha1",
+            "fieldsType": "FieldsV1",
+            "fieldsV1": {
+              "f:metadata": {
+                "f:labels": {
+                  ".": {},
+                  "f:plugin-config-hash": {},
+                  "f:pod-spec-hash": {},
+                  "f:starboard.resource.kind": {},
+                  "f:starboard.resource.name": {},
+                  "f:starboard.resource.namespace": {}
+                },
+                "f:ownerReferences": {
+                  ".": {},
+                  "k:{\"uid\":\"31e570f3-1405-4b65-a866-60dff57d3fec\"}": {
+                    ".": {},
+                    "f:apiVersion": {},
+                    "f:blockOwnerDeletion": {},
+                    "f:controller": {},
+                    "f:kind": {},
+                    "f:name": {},
+                    "f:uid": {}
+                  }
+                }
+              },
+              "f:report": {
+                ".": {},
+                "f:containerChecks": {
+                  ".": {},
+                  "f:local-path-provisioner": {}
+                },
+                "f:podChecks": {},
+                "f:scanner": {
+                  ".": {},
+                  "f:name": {},
+                  "f:vendor": {},
+                  "f:version": {}
+                },
+                "f:summary": {
+                  ".": {},
+                  "f:dangerCount": {},
+                  "f:passCount": {},
+                  "f:warningCount": {}
+                },
+                "f:updateTimestamp": {}
+              }
+            },
+            "manager": "starboard-operator",
+            "operation": "Update",
+            "time": "2021-05-02T12:44:15Z"
+          }
+        ],
+        "name": "replicaset-local-path-provisioner-78776bfc44",
+        "namespace": "local-path-storage",
+        "ownerReferences": [
+          {
+            "apiVersion": "apps/v1",
+            "blockOwnerDeletion": false,
+            "controller": true,
+            "kind": "ReplicaSet",
+            "name": "local-path-provisioner-78776bfc44",
+            "uid": "31e570f3-1405-4b65-a866-60dff57d3fec"
+          }
+        ],
+        "resourceVersion": "943",
+        "selfLink": "/apis/aquasecurity.github.io/v1alpha1/namespaces/local-path-storage/configauditreports/replicaset-local-path-provisioner-78776bfc44",
+        "uid": "0c487dce-0f8d-4eed-9c75-c41e97f8e97b"
+      },
+      "report": {
+        "containerChecks": {
+          "local-path-provisioner": [
+            {
+              "category": "Efficiency",
+              "checkID": "memoryLimitsMissing",
+              "message": "Memory limits should be set",
+              "severity": "warning",
+              "success": false
+            },
+            {
+              "category": "Reliability",
+              "checkID": "readinessProbeMissing",
+              "message": "Readiness probe should be configured",
+              "severity": "warning",
+              "success": false
+            },
+            {
+              "category": "Security",
+              "checkID": "insecureCapabilities",
+              "message": "Container should not have insecure capabilities",
+              "severity": "warning",
+              "success": false
+            },
+            {
+              "category": "Efficiency",
+              "checkID": "memoryRequestsMissing",
+              "message": "Memory requests should be set",
+              "severity": "warning",
+              "success": false
+            },
+            {
+              "category": "Security",
+              "checkID": "notReadOnlyRootFilesystem",
+              "message": "Filesystem should be read only",
+              "severity": "warning",
+              "success": false
+            },
+            {
+              "category": "Reliability",
+              "checkID": "tagNotSpecified",
+              "message": "Image tag is specified",
+              "severity": "danger",
+              "success": true
+            },
+            {
+              "category": "Efficiency",
+              "checkID": "cpuLimitsMissing",
+              "message": "CPU limits should be set",
+              "severity": "warning",
+              "success": false
+            },
+            {
+              "category": "Efficiency",
+              "checkID": "cpuRequestsMissing",
+              "message": "CPU requests should be set",
+              "severity": "warning",
+              "success": false
+            },
+            {
+              "category": "Security",
+              "checkID": "hostPortSet",
+              "message": "Host port is not configured",
+              "severity": "warning",
+              "success": true
+            },
+            {
+              "category": "Security",
+              "checkID": "runAsPrivileged",
+              "message": "Not running as privileged",
+              "severity": "danger",
+              "success": true
+            },
+            {
+              "category": "Security",
+              "checkID": "runAsRootAllowed",
+              "message": "Should not be allowed to run as root",
+              "severity": "warning",
+              "success": false
+            },
+            {
+              "category": "Security",
+              "checkID": "dangerousCapabilities",
+              "message": "Container does not have any dangerous capabilities",
+              "severity": "danger",
+              "success": true
+            },
+            {
+              "category": "Reliability",
+              "checkID": "livenessProbeMissing",
+              "message": "Liveness probe should be configured",
+              "severity": "warning",
+              "success": false
+            },
+            {
+              "category": "Security",
+              "checkID": "privilegeEscalationAllowed",
+              "message": "Privilege escalation should not be allowed",
+              "severity": "danger",
+              "success": false
+            }
+          ]
+        },
+        "podChecks": [
+          {
+            "category": "Security",
+            "checkID": "hostIPCSet",
+            "message": "Host IPC is not configured",
+            "severity": "danger",
+            "success": true
+          },
+          {
+            "category": "Security",
+            "checkID": "hostNetworkSet",
+            "message": "Host network is not configured",
+            "severity": "warning",
+            "success": true
+          },
+          {
+            "category": "Security",
+            "checkID": "hostPIDSet",
+            "message": "Host PID is not configured",
+            "severity": "danger",
+            "success": true
+          }
+        ],
+        "scanner": {
+          "name": "Polaris",
+          "vendor": "Fairwinds Ops",
+          "version": "3.2"
+        },
+        "summary": {
+          "dangerCount": 1,
+          "passCount": 7,
+          "warningCount": 9
+        },
+        "updateTimestamp": "2021-05-02T12:44:15Z"
+      }
+    },
+    {
+      "apiVersion": "aquasecurity.github.io/v1alpha1",
+      "kind": "ConfigAuditReport",
+      "metadata": {
+        "creationTimestamp": "2021-05-02T12:44:16Z",
+        "generation": 1,
+        "labels": {
+          "plugin-config-hash": "5b7d495c54",
+          "pod-spec-hash": "5c4dd774bd",
+          "starboard.resource.kind": "ReplicaSet",
+          "starboard.resource.name": "starboard-operator-574bc49f56",
+          "starboard.resource.namespace": "starboard-operator"
+        },
+        "managedFields": [
+          {
+            "apiVersion": "aquasecurity.github.io/v1alpha1",
+            "fieldsType": "FieldsV1",
+            "fieldsV1": {
+              "f:metadata": {
+                "f:labels": {
+                  ".": {},
+                  "f:plugin-config-hash": {},
+                  "f:pod-spec-hash": {},
+                  "f:starboard.resource.kind": {},
+                  "f:starboard.resource.name": {},
+                  "f:starboard.resource.namespace": {}
+                },
+                "f:ownerReferences": {
+                  ".": {},
+                  "k:{\"uid\":\"26f2b311-8f27-455d-ab8f-6ff66b3f0c27\"}": {
+                    ".": {},
+                    "f:apiVersion": {},
+                    "f:blockOwnerDeletion": {},
+                    "f:controller": {},
+                    "f:kind": {},
+                    "f:name": {},
+                    "f:uid": {}
+                  }
+                }
+              },
+              "f:report": {
+                ".": {},
+                "f:containerChecks": {
+                  ".": {},
+                  "f:starboard-operator": {}
+                },
+                "f:podChecks": {},
+                "f:scanner": {
+                  ".": {},
+                  "f:name": {},
+                  "f:vendor": {},
+                  "f:version": {}
+                },
+                "f:summary": {
+                  ".": {},
+                  "f:dangerCount": {},
+                  "f:passCount": {},
+                  "f:warningCount": {}
+                },
+                "f:updateTimestamp": {}
+              }
+            },
+            "manager": "starboard-operator",
+            "operation": "Update",
+            "time": "2021-05-02T12:44:16Z"
+          }
+        ],
+        "name": "replicaset-starboard-operator-574bc49f56",
+        "namespace": "starboard-operator",
+        "ownerReferences": [
+          {
+            "apiVersion": "apps/v1",
+            "blockOwnerDeletion": false,
+            "controller": true,
+            "kind": "ReplicaSet",
+            "name": "starboard-operator-574bc49f56",
+            "uid": "26f2b311-8f27-455d-ab8f-6ff66b3f0c27"
+          }
+        ],
+        "resourceVersion": "957",
+        "selfLink": "/apis/aquasecurity.github.io/v1alpha1/namespaces/starboard-operator/configauditreports/replicaset-starboard-operator-574bc49f56",
+        "uid": "4271d5d6-5730-4f40-a834-1e521b7fd9b1"
+      },
+      "report": {
+        "containerChecks": {
+          "starboard-operator": [
+            {
+              "category": "Security",
+              "checkID": "hostPortSet",
+              "message": "Host port is not configured",
+              "severity": "warning",
+              "success": true
+            },
+            {
+              "category": "Reliability",
+              "checkID": "livenessProbeMissing",
+              "message": "Liveness probe is configured",
+              "severity": "warning",
+              "success": true
+            },
+            {
+              "category": "Security",
+              "checkID": "notReadOnlyRootFilesystem",
+              "message": "Filesystem is read only",
+              "severity": "warning",
+              "success": true
+            },
+            {
+              "category": "Reliability",
+              "checkID": "readinessProbeMissing",
+              "message": "Readiness probe is configured",
+              "severity": "warning",
+              "success": true
+            },
+            {
+              "category": "Efficiency",
+              "checkID": "cpuLimitsMissing",
+              "message": "CPU limits should be set",
+              "severity": "warning",
+              "success": false
+            },
+            {
+              "category": "Efficiency",
+              "checkID": "cpuRequestsMissing",
+              "message": "CPU requests should be set",
+              "severity": "warning",
+              "success": false
+            },
+            {
+              "category": "Security",
+              "checkID": "insecureCapabilities",
+              "message": "Container does not have any insecure capabilities",
+              "severity": "warning",
+              "success": true
+            },
+            {
+              "category": "Efficiency",
+              "checkID": "memoryLimitsMissing",
+              "message": "Memory limits should be set",
+              "severity": "warning",
+              "success": false
+            },
+            {
+              "category": "Security",
+              "checkID": "privilegeEscalationAllowed",
+              "message": "Privilege escalation not allowed",
+              "severity": "danger",
+              "success": true
+            },
+            {
+              "category": "Security",
+              "checkID": "runAsPrivileged",
+              "message": "Not running as privileged",
+              "severity": "danger",
+              "success": true
+            },
+            {
+              "category": "Security",
+              "checkID": "runAsRootAllowed",
+              "message": "Should not be allowed to run as root",
+              "severity": "warning",
+              "success": false
+            },
+            {
+              "category": "Reliability",
+              "checkID": "tagNotSpecified",
+              "message": "Image tag is specified",
+              "severity": "danger",
+              "success": true
+            },
+            {
+              "category": "Security",
+              "checkID": "dangerousCapabilities",
+              "message": "Container does not have any dangerous capabilities",
+              "severity": "danger",
+              "success": true
+            },
+            {
+              "category": "Efficiency",
+              "checkID": "memoryRequestsMissing",
+              "message": "Memory requests should be set",
+              "severity": "warning",
+              "success": false
+            }
+          ]
+        },
+        "podChecks": [
+          {
+            "category": "Security",
+            "checkID": "hostPIDSet",
+            "message": "Host PID is not configured",
+            "severity": "danger",
+            "success": true
+          },
+          {
+            "category": "Security",
+            "checkID": "hostIPCSet",
+            "message": "Host IPC is not configured",
+            "severity": "danger",
+            "success": true
+          },
+          {
+            "category": "Security",
+            "checkID": "hostNetworkSet",
+            "message": "Host network is not configured",
+            "severity": "warning",
+            "success": true
+          }
+        ],
+        "scanner": {
+          "name": "Polaris",
+          "vendor": "Fairwinds Ops",
+          "version": "3.2"
+        },
+        "summary": {
+          "dangerCount": 0,
+          "passCount": 12,
+          "warningCount": 5
+        },
+        "updateTimestamp": "2021-05-02T12:44:16Z"
+      }
+    },
+    {
+      "apiVersion": "aquasecurity.github.io/v1alpha1",
+      "kind": "ConfigAuditReport",
+      "metadata": {
+        "creationTimestamp": "2021-05-02T12:44:18Z",
+        "generation": 1,
+        "labels": {
+          "plugin-config-hash": "5b7d495c54",
+          "pod-spec-hash": "7d48b6dfcf",
+          "starboard.resource.kind": "ReplicaSet",
+          "starboard.resource.name": "secu-test-6bfff9485c",
+          "starboard.resource.namespace": "test1"
+        },
+        "managedFields": [
+          {
+            "apiVersion": "aquasecurity.github.io/v1alpha1",
+            "fieldsType": "FieldsV1",
+            "fieldsV1": {
+              "f:metadata": {
+                "f:labels": {
+                  ".": {},
+                  "f:plugin-config-hash": {},
+                  "f:pod-spec-hash": {},
+                  "f:starboard.resource.kind": {},
+                  "f:starboard.resource.name": {},
+                  "f:starboard.resource.namespace": {}
+                },
+                "f:ownerReferences": {
+                  ".": {},
+                  "k:{\"uid\":\"62f61438-8e43-46e6-bed4-009399162454\"}": {
+                    ".": {},
+                    "f:apiVersion": {},
+                    "f:blockOwnerDeletion": {},
+                    "f:controller": {},
+                    "f:kind": {},
+                    "f:name": {},
+                    "f:uid": {}
+                  }
+                }
+              },
+              "f:report": {
+                ".": {},
+                "f:containerChecks": {
+                  ".": {},
+                  "f:nginx": {}
+                },
+                "f:podChecks": {},
+                "f:scanner": {
+                  ".": {},
+                  "f:name": {},
+                  "f:vendor": {},
+                  "f:version": {}
+                },
+                "f:summary": {
+                  ".": {},
+                  "f:dangerCount": {},
+                  "f:passCount": {},
+                  "f:warningCount": {}
+                },
+                "f:updateTimestamp": {}
+              }
+            },
+            "manager": "starboard-operator",
+            "operation": "Update",
+            "time": "2021-05-02T12:44:18Z"
+          }
+        ],
+        "name": "replicaset-secu-test-6bfff9485c",
+        "namespace": "test1",
+        "ownerReferences": [
+          {
+            "apiVersion": "apps/v1",
+            "blockOwnerDeletion": false,
+            "controller": true,
+            "kind": "ReplicaSet",
+            "name": "secu-test-6bfff9485c",
+            "uid": "62f61438-8e43-46e6-bed4-009399162454"
+          }
+        ],
+        "resourceVersion": "1008",
+        "selfLink": "/apis/aquasecurity.github.io/v1alpha1/namespaces/test1/configauditreports/replicaset-secu-test-6bfff9485c",
+        "uid": "2737869c-97d6-4de2-a4b3-db67ac641f17"
+      },
+      "report": {
+        "containerChecks": {
+          "nginx": [
+            {
+              "category": "Security",
+              "checkID": "dangerousCapabilities",
+              "message": "Container does not have any dangerous capabilities",
+              "severity": "danger",
+              "success": true
+            },
+            {
+              "category": "Reliability",
+              "checkID": "livenessProbeMissing",
+              "message": "Liveness probe should be configured",
+              "severity": "warning",
+              "success": false
+            },
+            {
+              "category": "Security",
+              "checkID": "notReadOnlyRootFilesystem",
+              "message": "Filesystem should be read only",
+              "severity": "warning",
+              "success": false
+            },
+            {
+              "category": "Security",
+              "checkID": "privilegeEscalationAllowed",
+              "message": "Privilege escalation should not be allowed",
+              "severity": "danger",
+              "success": false
+            },
+            {
+              "category": "Efficiency",
+              "checkID": "cpuLimitsMissing",
+              "message": "CPU limits should be set",
+              "severity": "warning",
+              "success": false
+            },
+            {
+              "category": "Security",
+              "checkID": "insecureCapabilities",
+              "message": "Container should not have insecure capabilities",
+              "severity": "warning",
+              "success": false
+            },
+            {
+              "category": "Efficiency",
+              "checkID": "memoryRequestsMissing",
+              "message": "Memory requests should be set",
+              "severity": "warning",
+              "success": false
+            },
+            {
+              "category": "Reliability",
+              "checkID": "readinessProbeMissing",
+              "message": "Readiness probe should be configured",
+              "severity": "warning",
+              "success": false
+            },
+            {
+              "category": "Security",
+              "checkID": "runAsRootAllowed",
+              "message": "Should not be allowed to run as root",
+              "severity": "warning",
+              "success": false
+            },
+            {
+              "category": "Reliability",
+              "checkID": "tagNotSpecified",
+              "message": "Image tag should be specified",
+              "severity": "danger",
+              "success": false
+            },
+            {
+              "category": "Efficiency",
+              "checkID": "cpuRequestsMissing",
+              "message": "CPU requests should be set",
+              "severity": "warning",
+              "success": false
+            },
+            {
+              "category": "Security",
+              "checkID": "hostPortSet",
+              "message": "Host port is not configured",
+              "severity": "warning",
+              "success": true
+            },
+            {
+              "category": "Efficiency",
+              "checkID": "memoryLimitsMissing",
+              "message": "Memory limits should be set",
+              "severity": "warning",
+              "success": false
+            },
+            {
+              "category": "Security",
+              "checkID": "runAsPrivileged",
+              "message": "Not running as privileged",
+              "severity": "danger",
+              "success": true
+            }
+          ]
+        },
+        "podChecks": [
+          {
+            "category": "Security",
+            "checkID": "hostPIDSet",
+            "message": "Host PID is not configured",
+            "severity": "danger",
+            "success": true
+          },
+          {
+            "category": "Security",
+            "checkID": "hostIPCSet",
+            "message": "Host IPC is not configured",
+            "severity": "danger",
+            "success": true
+          },
+          {
+            "category": "Security",
+            "checkID": "hostNetworkSet",
+            "message": "Host network is not configured",
+            "severity": "warning",
+            "success": true
+          }
+        ],
+        "scanner": {
+          "name": "Polaris",
+          "vendor": "Fairwinds Ops",
+          "version": "3.2"
+        },
+        "summary": {
+          "dangerCount": 2,
+          "passCount": 6,
+          "warningCount": 9
+        },
+        "updateTimestamp": "2021-05-02T12:44:18Z"
+      }
+    },
+    {
+      "apiVersion": "aquasecurity.github.io/v1alpha1",
+      "kind": "ConfigAuditReport",
+      "metadata": {
+        "creationTimestamp": "2021-05-02T12:44:03Z",
+        "generation": 1,
+        "labels": {
+          "plugin-config-hash": "5b7d495c54",
+          "pod-spec-hash": "76477b55b7",
+          "starboard.resource.kind": "ReplicaSet",
+          "starboard.resource.name": "secu-test-7697b8b957",
+          "starboard.resource.namespace": "test2"
+        },
+        "managedFields": [
+          {
+            "apiVersion": "aquasecurity.github.io/v1alpha1",
+            "fieldsType": "FieldsV1",
+            "fieldsV1": {
+              "f:metadata": {
+                "f:labels": {
+                  ".": {},
+                  "f:plugin-config-hash": {},
+                  "f:pod-spec-hash": {},
+                  "f:starboard.resource.kind": {},
+                  "f:starboard.resource.name": {},
+                  "f:starboard.resource.namespace": {}
+                },
+                "f:ownerReferences": {
+                  ".": {},
+                  "k:{\"uid\":\"57557765-2870-4f85-bac9-b484c3e3221b\"}": {
+                    ".": {},
+                    "f:apiVersion": {},
+                    "f:blockOwnerDeletion": {},
+                    "f:controller": {},
+                    "f:kind": {},
+                    "f:name": {},
+                    "f:uid": {}
+                  }
+                }
+              },
+              "f:report": {
+                ".": {},
+                "f:containerChecks": {
+                  ".": {},
+                  "f:redis": {}
+                },
+                "f:podChecks": {},
+                "f:scanner": {
+                  ".": {},
+                  "f:name": {},
+                  "f:vendor": {},
+                  "f:version": {}
+                },
+                "f:summary": {
+                  ".": {},
+                  "f:dangerCount": {},
+                  "f:passCount": {},
+                  "f:warningCount": {}
+                },
+                "f:updateTimestamp": {}
+              }
+            },
+            "manager": "starboard-operator",
+            "operation": "Update",
+            "time": "2021-05-02T12:44:03Z"
+          }
+        ],
+        "name": "replicaset-secu-test-7697b8b957",
+        "namespace": "test2",
+        "ownerReferences": [
+          {
+            "apiVersion": "apps/v1",
+            "blockOwnerDeletion": false,
+            "controller": true,
+            "kind": "ReplicaSet",
+            "name": "secu-test-7697b8b957",
+            "uid": "57557765-2870-4f85-bac9-b484c3e3221b"
+          }
+        ],
+        "resourceVersion": "854",
+        "selfLink": "/apis/aquasecurity.github.io/v1alpha1/namespaces/test2/configauditreports/replicaset-secu-test-7697b8b957",
+        "uid": "601c762b-055e-495d-ab75-aa380d8ea3f3"
+      },
+      "report": {
+        "containerChecks": {
+          "redis": [
+            {
+              "category": "Efficiency",
+              "checkID": "cpuLimitsMissing",
+              "message": "CPU limits should be set",
+              "severity": "warning",
+              "success": false
+            },
+            {
+              "category": "Efficiency",
+              "checkID": "cpuRequestsMissing",
+              "message": "CPU requests should be set",
+              "severity": "warning",
+              "success": false
+            },
+            {
+              "category": "Security",
+              "checkID": "notReadOnlyRootFilesystem",
+              "message": "Filesystem should be read only",
+              "severity": "warning",
+              "success": false
+            },
+            {
+              "category": "Security",
+              "checkID": "privilegeEscalationAllowed",
+              "message": "Privilege escalation should not be allowed",
+              "severity": "danger",
+              "success": false
+            },
+            {
+              "category": "Efficiency",
+              "checkID": "memoryLimitsMissing",
+              "message": "Memory limits should be set",
+              "severity": "warning",
+              "success": false
+            },
+            {
+              "category": "Reliability",
+              "checkID": "readinessProbeMissing",
+              "message": "Readiness probe should be configured",
+              "severity": "warning",
+              "success": false
+            },
+            {
+              "category": "Reliability",
+              "checkID": "tagNotSpecified",
+              "message": "Image tag should be specified",
+              "severity": "danger",
+              "success": false
+            },
+            {
+              "category": "Security",
+              "checkID": "dangerousCapabilities",
+              "message": "Container does not have any dangerous capabilities",
+              "severity": "danger",
+              "success": true
+            },
+            {
+              "category": "Security",
+              "checkID": "insecureCapabilities",
+              "message": "Container should not have insecure capabilities",
+              "severity": "warning",
+              "success": false
+            },
+            {
+              "category": "Reliability",
+              "checkID": "livenessProbeMissing",
+              "message": "Liveness probe should be configured",
+              "severity": "warning",
+              "success": false
+            },
+            {
+              "category": "Security",
+              "checkID": "runAsPrivileged",
+              "message": "Not running as privileged",
+              "severity": "danger",
+              "success": true
+            },
+            {
+              "category": "Security",
+              "checkID": "hostPortSet",
+              "message": "Host port is not configured",
+              "severity": "warning",
+              "success": true
+            },
+            {
+              "category": "Efficiency",
+              "checkID": "memoryRequestsMissing",
+              "message": "Memory requests should be set",
+              "severity": "warning",
+              "success": false
+            },
+            {
+              "category": "Security",
+              "checkID": "runAsRootAllowed",
+              "message": "Should not be allowed to run as root",
+              "severity": "warning",
+              "success": false
+            }
+          ]
+        },
+        "podChecks": [
+          {
+            "category": "Security",
+            "checkID": "hostIPCSet",
+            "message": "Host IPC is not configured",
+            "severity": "danger",
+            "success": true
+          },
+          {
+            "category": "Security",
+            "checkID": "hostNetworkSet",
+            "message": "Host network is not configured",
+            "severity": "warning",
+            "success": true
+          },
+          {
+            "category": "Security",
+            "checkID": "hostPIDSet",
+            "message": "Host PID is not configured",
+            "severity": "danger",
+            "success": true
+          }
+        ],
+        "scanner": {
+          "name": "Polaris",
+          "vendor": "Fairwinds Ops",
+          "version": "3.2"
+        },
+        "summary": {
+          "dangerCount": 2,
+          "passCount": 6,
+          "warningCount": 9
+        },
+        "updateTimestamp": "2021-05-02T12:44:03Z"
+      }
+    }
+  ],
+  "kind": "List",
+  "metadata": {
+    "resourceVersion": "",
+    "selfLink": ""
+  }
+}

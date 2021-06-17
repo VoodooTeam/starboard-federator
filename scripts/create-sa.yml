@@ -1,0 +1,29 @@
+## apply this on target clusters to be able to retrieve the reports
+apiVersion: v1
+kind: ServiceAccount
+metadata:
+  namespace: kube-system
+  name: report-reader
+---
+apiVersion: rbac.authorization.k8s.io/v1
+kind: ClusterRole
+metadata:
+  name: report-reader
+rules:
+- apiGroups: ["aquasecurity.github.io"]
+  resources: ["ciskubebenchreports", "configauditreports", "kubehunterreports", "vulnerabilityreports"]
+  verbs: ["get", "watch", "list"]
+---
+apiVersion: rbac.authorization.k8s.io/v1
+kind: ClusterRoleBinding
+metadata:
+  name: report-reader
+subjects:
+- kind: ServiceAccount
+  name: report-reader
+  namespace: kube-system
+  apiGroup: "" 
+roleRef:
+  kind: ClusterRole
+  name: report-reader
+  apiGroup: rbac.authorization.k8s.io

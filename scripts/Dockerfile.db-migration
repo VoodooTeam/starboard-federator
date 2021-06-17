@@ -1,0 +1,8 @@
+FROM postgres:13.2-alpine
+
+COPY ./Application/IHPSchema.sql .
+COPY ./Application/Schema.sql .
+COPY ./Application/Fixtures.sql .
+COPY ./scripts/db-migrate.sh .
+
+ENTRYPOINT ./db-migrate.sh
